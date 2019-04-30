@@ -14,10 +14,16 @@ $f3 = Base::instance();
 $f3->set('DEBUG', 3);
 
 //define a default route
-$f3->route('GET /', function(){
+$f3->route('GET|POST /', function(){
 
     $view = new View();
-    echo $view->render('views/info.html');
+    echo $view->render('views/release_of_information.html');
+});
+
+$f3->route('GET /acknowledgements', function(){
+
+    $view = new View();
+    echo $view->render('views/acknowledgements.html');
 });
 
 
