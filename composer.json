@@ -1,0 +1,13 @@
+{
+    "name": "awesome4/SKCAC/info.html",
+    "authors": [
+      {
+        "name": "Keith Carlson",
+        "email": "kcarlson@mail.greenriver.edu"
+      }
+    ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+
+}
