@@ -25,6 +25,9 @@
 <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#ssi" aria-expanded="false" aria-controls="collapseExample">
     Title II/Medicare and SSI/Medicaid
 </button>
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#medical" aria-expanded="false" aria-controls="collapseExample">
+    Medical Information
+</button>
 <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#rights" aria-expanded="false" aria-controls="collapseExample">
     Notice of Rights
 </button>
@@ -33,6 +36,8 @@
 </button>
 <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#grievance" aria-expanded="false" aria-controls="collapseExample3">
     Appeal Grievance Procedures
+</button>
+<button type="submit" class="btn btn-primary">Submit
 </button>
 
 <div class="collapse" id="personal">
@@ -131,6 +136,35 @@
     </div>
 </div>
 
+<div class="collapse" id="medical">
+    <div class="card card-body">
+        <h3>Emergency Contact:</h3>
+        <label>Contact Name
+            <input type="text" id="contact">
+        </label>
+        <label>Contact Phone
+            <input type="text" id="emergencyPhone">
+        </label>
+        <label>Alternate Phone #'s
+            <input type="text" id="altEmergencyPhone">
+        </label>
+        <hr>
+        <label>Medical Alerts
+            <input type="text" id="alerts">
+        </label>
+        <label>Physical Limitations
+            <input type="text" id="physical">
+        </label>
+        <label>Dietary Restrictions
+            <input type="text" id="diet">
+        </label>
+        <hr>
+        <h3>Medications</h3>
+        <input type="text" id="medications">
+
+    </div>
+</div>
+
 <div class="collapse" id="rights">
     <div class="card card-body">
         As a participant of services provided by SKCAC Industries and Employment Services, you have the right to:
@@ -186,7 +220,6 @@
     <input type="checkbox" id="guardianSig">
     Guardian (if under legal guardianship) Acknowledgement
 </div>
-
 
 <div class="collapse" id="photo">
         <div class="card card-body">
