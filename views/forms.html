@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet"
+          href="../SKCAC/css/bootstrap.min.css"
+          >
+    <!--CSS Styles-->
+    <link href="../SKCAC/css/styles.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="../SKCAC/js/bootstrap.min.js"></script>
+    <title>SKCAC</title>
+</head>
+<body>
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#personal" aria-expanded="false" aria-controls="collapseExample">
+    Personal Information
+</button>
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#release" aria-expanded="false" aria-controls="collapseExample">
+    Release of Information
+</button>
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#ssi" aria-expanded="false" aria-controls="collapseExample">
+    Title II/Medicare and SSI/Medicaid
+</button>
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#rights" aria-expanded="false" aria-controls="collapseExample">
+    Notice of Rights
+</button>
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#photo" aria-expanded="false" aria-controls="collapseExample2">
+    Photo Release
+</button>
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#grievance" aria-expanded="false" aria-controls="collapseExample3">
+    Appeal Grievance Procedures
+</button>
+
+<div class="collapse" id="personal">
+    <div class="card card-body">
+        <h1>Client Information</h1>
+        <label>Name
+        <input type="text" id="participant">
+        </label>
+        <label>Email
+        <input type="text" id="email">
+        </label>
+        <label>Phone Number
+        <input type="text" id="phone">
+        </label>
+        <label>Address
+        <input type="text" id="add1">
+        </label>
+        <label>Address 2
+        <input type="text" id="add2">
+        </label>
+        <br>
+        <h1>Guardian Information</h1>
+        <input type="text" id="residentialP">
+        <input type="text" id="guardian">
+
+
+    </div>
+</div>
+
+<div class="collapse" id="release">
+    <div class="card card-body">
+        <p>By filling out this information you hereby give your permission for SKCAC Industries and Employment Services to exchange necessary
+            information regarding my employment and program services with the agencies and/or individuals indicated below</p>
+        <label class="font-weight-bold">Referring Agency</label>
+        <br>
+        <select name="agency" id="referring" class="form-control">
+            <option value="dshs" default="default">Developmental Disabilities Administration, DSHS</option>
+            <option value="dvr">Division of Vocational Rehabilitation (DVR)</option>
+        </select>
+        <br>
+        <label class="font-weight-bold">Residential Provider</label>
+        <br>
+        <input type="text" id="provider" class="form-control"
+               placeholder="Residential Provider">
+        <br>
+        <label class="font-weight-bold">Funding Agency</label>
+        <br>
+        <select name="agency" id="funding" class="form-control">
+            <option>King County, Developmental Disabilities Section</option>
+            <option>Division of Vocational Rehabilitation (DVR)</option>
+        </select>
+        <br>
+        <label class="font-weight-bold">Employer/Volunteer site</label>
+        <br>
+        <input type="text" id="employer" class="form-control"
+               placeholder="employer">
+        <br>
+        <label class="font-weight-bold">Other</label>
+        <br>
+        <input type="text" id="other" class="form-control"
+               placeholder="other">
+        <p>The information may be released via mail, phone, personal interview, fax or other means of communication.
+            <br>
+            I have been informed that information about me is confidential and restricted for employment and program services purposes only.
+            <br>
+            This release/exchange of information release is active and valid for a 12-month period, from date of signature.
+        </p>
+
+        <div class="form-check">
+            <input type="checkbox" id="participantSigRelease">
+            Program Participant Acknowledgement
+            <br>
+
+            <input type="checkbox" id="guardianSigRelease">
+            Guardian (if under legal guardianship) Acknowledgement
+
+        </div>
+
+    </div>
+</div>
+
+<div class="collapse" id="ssi">
+    <div class="card card-body">
+        <p>I hereby acknowledge that I have received information to find Title II Benefits: SSDI (Disability Insurance),
+            CDB (Childhood Disability Benefits) and Medicare 2018 and Supplemental Security Income and Medicaid 2018
+            at www.ssa.gov. I understand that while the Employment Support Agency (SKCAC) may offer basic assistance or
+            information regarding my benefits, the Agency is not responsible for managing my Title II and Medicare or Supplemental
+            Security Income and Medicaid benefits.</p>
+
+        <label>SSDI Amount
+            <input type="text" id="ssdiA">
+        </label>
+        <label>SSI Amount
+            <input type="text" id="ssiA">
+        </label>
+    </div>
+</div>
+
+<div class="collapse" id="rights">
+    <div class="card card-body">
+        As a participant of services provided by SKCAC Industries and Employment Services, you have the right to:
+<br>
+        - Respectful staff-to-participant interactions;
+        <br>
+        - Be treated with dignity and respect;
+        <br>
+        - Be free from any kind of abuse or punishment including neglect, financial exploitation, abandonment, humiliation, retaliation, verbal, mental, physical and/or sexual abuse;
+        <br>
+        - Be free from discrimination and harassment on the basis of race, color, national origin, gender, age, religion, creed, marital status, disability, sexual orientation, or the presence of any physical, mental or sensory disability;
+        <br>
+        - Be compensated for work at prevailing wages and commensurate with abilities;
+        <br>
+        - Be free from invasion of privacy;
+        <br>
+        - Have information about you treated confidentially;
+        <br>
+        - Actively participate in the development/modification of your service program;
+<br>
+        - Select your own vocational goals and have final approval on all plans SKCAC helps you with or makes for you;
+<br>
+        - Be provided services in your best interest and related to your needs;
+<br>
+        - Review your service records, have access to and release of your personal records, as requested;
+<br>
+        - Be fully informed regarding fees to be charged and methods for payment;
+<br>
+        - Be provided with rules and regulation governing conduct and responsibilities of SKCAC participants and employees;
+<br>
+        - Register complaints and recommendations without interference, reprisal or retaliation;
+<br>
+        - An appeal/grievance process if you disagree with a SKCAC decision and that the action will not result in retaliation or barriers to services;
+<br>
+        - Involve others in the planning process (spouse, parents, guardian, advocates, etc.);
+<br>
+        - Informed consent about service delivery, release of information, composition of service delivery team, and involvement in research projects;
+<br>
+        - Informed right of refusal, when consent is required, with explanation of risks and adverse consequences of the refusal;
+<br>
+        - Access to self help and advocacy services;
+<br>
+        - Access or referral to legal entities for appropriate representation, if needed;
+<br>
+        - Investigation and resolution of alleged infringement of rights.
+<br>
+        This information has been reviewed with me and I understand my rights as a participant of services provided by SKCAC Industries and Employment Services
+
+    </div>
+    <input type="checkbox" id="participantSig">
+    Program Participant Acknowledgement
+    <br>
+    <input type="checkbox" id="guardianSig">
+    Guardian (if under legal guardianship) Acknowledgement
+</div>
+
+
+<div class="collapse" id="photo">
+        <div class="card card-body">
+            <p>I, _________________________________, hereby give my permission for SKCAC Industries and Employment Services to use my photograph for the specified use below:
+            <br>
+            as part of materials promoting supported employment to potential employers and at community events which focus on supported employment.
+            <br>
+            I have been informed that the photograph will be used for the purpose stated, and is restricted to said use.
+            <br>
+            This release is considered active and valid for a 12-month period, from the date of signature.
+            </p>
+        </div>
+        <input type="checkbox" id="participantSig2">
+        Program Participant Acknowledgement
+        <br>
+        <input type="checkbox" id="guardianSig2">
+        Guardian (if under legal guardianship) Acknowledgement
+    </div>
+
+<div class="collapse" id="grievance">
+    <div class="card card-body">
+        <p>Please know that you may have an advocate to support and/or to represent you at any step of this process and you are protected from any and all retaliation or reprisal based on your concerns.
+<br><br>
+            From time to time you or your parent/guardian may disagree with a decision made by staff of SKCAC. When this happens, we want to make sure all conflicts are fully negotiated. If a conflict arises, which cannot be resolved through regular lines of communication, please observe the following procedure:
+<br>
+            1. Attempt to work out the conflict with the immediate person in charge, your Employment Specialist or Supervisor. Try to work out the conflict and if the conflict cannot be resolved move on to the next step.
+<br>
+            From this point forward in the process, each step will be documented in writing.
+<br>
+            2. Ask for a meeting with the Program Services representative and explain the situation to them. They may ask you to put the disagreement in writing and the Executive Director will make a decision on the conflict within five working days.
+<br>
+            3. If you are not satisfied with the decision, please make an appointment, or contact the Executive Director of SKCAC and explain the situation to them. They may also ask you to put the conflict in writing. The Executive Director will make a decision regarding the conflict within five working days. If you are still not satisfied with the decision of the Executive Director, and then he/she will refer you to a representative of the Board of Directors, who will review your complaint or conflict, make a decision in writing and give you a copy within five working days after the next scheduled Board of Directors meeting.
+<br>
+            4. If you still are not satisfied with the decision, then you will be referred to a person or organization not affiliated with SKCAC, who will proceed as a mediator. Their job is to listen to you, your parent/guardian, and/or your advocate and SKCAC and to reach a final decision concerning your conflict.
+<br>
+            The mediator may be a staff member of the ARC, a professional mediator or organization, or someone you and SKCAC both agree on. If the person is a professional mediator and charges for the service, the parties will divide the cost evenly, unless other arrangements have been made. The mediator will set the guidelines for the process and keep all parties informed of the process, according to the established guidelines. Mediation is voluntary and not legally binding.
+<br>
+            Any grievance action will not result in retaliation or barriers to services to you or anyone involved in the grievance process.</p>
+    </div>
+    <input type="checkbox" id="participantSig3">
+    Program Participant Acknowledgement
+    <br>
+    <input type="checkbox" id="guardianSig3">
+    Guardian (if under legal guardianship) Acknowledgement
+
+</div>
+
+</body>
