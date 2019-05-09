@@ -16,16 +16,102 @@
     <title>SKCAC</title>
 </head>
 <body>
-<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#personal" aria-expanded="false" aria-controls="collapseExample">
+    Personal Information
+</button>
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#release" aria-expanded="false" aria-controls="collapseExample">
+    Release of Information
+</button>
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#rights" aria-expanded="false" aria-controls="collapseExample">
     Notice of Rights
 </button>
-<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#photo" aria-expanded="false" aria-controls="collapseExample2">
     Photo Release
 </button>
-<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+<button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#grievance" aria-expanded="false" aria-controls="collapseExample3">
     Appeal Grievance Procedures
 </button>
-<div class="collapse" id="collapseExample">
+
+<div class="collapse" id="personal">
+    <div class="card card-body">
+        <h1>Client Information</h1>
+        <label>Name
+        <input type="text" id="participant">
+        </label>
+        <label>Email
+        <input type="text" id="email">
+        </label>
+        <label>Phone Number
+        <input type="text" id="phone">
+        </label>
+        <label>Address
+        <input type="text" id="add1">
+        </label>
+        <label>Address 2
+        <input type="text" id="add2">
+        </label>
+        <br>
+        <h1>Guardian Information</h1>
+        <input type="text" id="residentialP">
+        <input type="text" id="guardian">
+
+
+    </div>
+</div>
+
+<div class="collapse" id="release">
+    <div class="card card-body">
+        <p>By filling out this information you hereby give your permission for SKCAC Industries and Employment Services to exchange necessary
+            information regarding my employment and program services with the agencies and/or individuals indicated below</p>
+        <label class="font-weight-bold">Referring Agency</label>
+        <br>
+        <select name="agency" id="referring" class="form-control">
+            <option value="dshs" default="default">Developmental Disabilities Administration, DSHS</option>
+            <option value="dvr">Division of Vocational Rehabilitation (DVR)</option>
+        </select>
+        <br>
+        <label class="font-weight-bold">Residential Provider</label>
+        <br>
+        <input type="text" id="provider" class="form-control"
+               placeholder="Residential Provider">
+        <br>
+        <label class="font-weight-bold">Funding Agency</label>
+        <br>
+        <select name="agency" id="funding" class="form-control">
+            <option>King County, Developmental Disabilities Section</option>
+            <option>Division of Vocational Rehabilitation (DVR)</option>
+        </select>
+        <br>
+        <label class="font-weight-bold">Employer/Volunteer site</label>
+        <br>
+        <input type="text" id="employer" class="form-control"
+               placeholder="employer">
+        <br>
+        <label class="font-weight-bold">Other</label>
+        <br>
+        <input type="text" id="other" class="form-control"
+               placeholder="other">
+        <p>The information may be released via mail, phone, personal interview, fax or other means of communication.
+            <br>
+            I have been informed that information about me is confidential and restricted for employment and program services purposes only.
+            <br>
+            This release/exchange of information release is active and valid for a 12-month period, from date of signature.
+        </p>
+
+        <div class="form-check">
+            <input type="checkbox" id="participantSigRelease">
+            Program Participant Acknowledgement
+            <br>
+            
+            <input type="checkbox" id="guardianSigRelease">
+            Guardian (if under legal guardianship) Acknowledgement
+
+        </div>
+
+    </div>
+</div>
+
+<div class="collapse" id="rights">
     <div class="card card-body">
         As a participant of services provided by SKCAC Industries and Employment Services, you have the right to:
 <br>
@@ -82,7 +168,7 @@
 </div>
 
 
-    <div class="collapse" id="collapseExample2">
+<div class="collapse" id="photo">
         <div class="card card-body">
             <p>I, _________________________________, hereby give my permission for SKCAC Industries and Employment Services to use my photograph for the specified use below:
             <br>
@@ -100,7 +186,7 @@
         Guardian (if under legal guardianship) Acknowledgement
     </div>
 
-<div class="collapse" id="collapseExample3">
+<div class="collapse" id="grievance">
     <div class="card card-body">
         <p>Please know that you may have an advocate to support and/or to represent you at any step of this process and you are protected from any and all retaliation or reprisal based on your concerns.
 <br><br>
