@@ -1,0 +1,27 @@
+/*
+    Author: Awesome Four
+    Date:   4/25/2019
+    File:   styles.css
+
+    SKCAC  css style file.
+*/
+
+html {
+    width: 100%;
+    text-decoration: none;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+}
+
+#main {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 2%;
+    border: 1px solid lightgrey;
+}
