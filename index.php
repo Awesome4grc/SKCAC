@@ -23,14 +23,8 @@ $f3->set('DEBUG', 3);
 //define a default route
 $f3->route('GET|POST /', function(){
 
-    $view = new View();
-    echo $view->render('views/release_of_information.html');
-});
-
-$f3->route('GET /acknowledgements', function(){
-
-    $view = new View();
-    echo $view->render('views/acknowledgements.html');
+    $view = new Template();
+    echo $view->render('views/forms.html');
 });
 
 
