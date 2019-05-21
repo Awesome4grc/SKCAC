@@ -4,3 +4,8 @@ $('.btn').on('click', function () {
     var buttonId = 'personal' + (number + 1);
     $('#' + buttonId).click();
 });
+
+$('.btn-tab').on('click', function(){
+    var tabName = $(this).attr('name');
+    $(tabName).click();
+});
