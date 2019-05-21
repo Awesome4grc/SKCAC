@@ -556,8 +556,8 @@
                                                 <br>
                                                 <textarea rows="10" cols="40"></textarea>
                                             </div>
-                                            <button type="button" id="7"
-                                                    class="btn btn-primary">Next
+                                            <button type="button" name="#rightsTab"
+                                                    class="btn-tab btn-primary">Next
                                             </button>
                                         </div>
                                     </form>
@@ -571,17 +571,21 @@
             <div class="tab-pane fade" id="rights">
                 <h3 class="mt-2">Notice of Participant Rights</h3>
                 <include href="views/Notice_of_Rights.html"/>
+                <button class="btn-tab btn-primary" name="#releaseTab">Next</button>
 
             </div>
             <div class="tab-pane fade" id="release">
                 <include href="views/release.html"/>
+                <button class="btn-tab btn-primary" name="#photoTab">Next</button>
             </div>
             <div class="tab-pane fade" id="photo">
                 <include href="views/photo.html"/>
+                <button class="btn-tab btn-primary" name="#appealTab">Next</button>
             </div>
             <div class="tab-pane fade" id="appeal">
                 <h3 class="mt-2">Appeal Grievance Procedures</h3>
                 <include href="views/grievance.html"/>
+                <button class="btn-tab btn-primary" name="#ssiTab">Next</button>
 
             </div>
 
@@ -594,7 +598,7 @@
 
 <!--main container tag -->
 </div>
-<script src="js/nextButton.js">
+<script src="JavaScript/nextButton.js">
 </script>
 </body>
 </html>
