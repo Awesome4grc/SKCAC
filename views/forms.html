@@ -41,7 +41,7 @@
 <!--Personal Info-->
 <div class="container border rounded" id="main">
     <div class="bs-example">
-        <form action="" method="post" novalidate>
+
 
         <include href="views/navigation.html"/>
 
@@ -70,7 +70,7 @@
                                     <h3>Participant Information</h3>
                                     <hr>
                                     <form class="user-form" novalidate>
-                                        <div class="form-row" id="clientForm">
+                                        <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="clientFirst">First Name</label>
                                                 <input type="text" class="form-control"
@@ -121,32 +121,32 @@
                                             </div>
                                         </div>
 
-                                        <label for="inputAddress">Address</label>
+                                        <label for="clientAddress">Address</label>
                                         <input type="text" class="form-control"
-                                               id="inputAddress"
+                                               id="clientAddress"
                                                placeholder="1234 Main St" required>
 
 
-                                        <label for="inputAddress2">Address 2</label>
+                                        <label for="clientAddress2">Address 2</label>
                                         <input type="text" class="form-control"
-                                               id="inputAddress2"
+                                               id="clientAddress2"
                                                placeholder="Apartment, studio, or floor">
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="inputCity">City</label>
+                                                <label for="clientCity">City</label>
                                                 <input type="text" class="form-control"
-                                                       id="inputCity"
+                                                       id="clientCity"
                                                        required>
                                                 <div class="invalid-feedback">
                                                     Please provide a valid city.
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <label for="state">State</label>
+                                                <label for="clientState">State</label>
                                                 <input type="text" class="form-control"
                                                        name="state"
-                                                       id="state" placeholder="state"
+                                                       id="clientState" placeholder="state"
                                                        required>
                                                 <div class="invalid-feedback">
                                                     Please provide a valid state.
@@ -154,435 +154,441 @@
 
                                             </div>
                                             <div class="form-group col-md-2">
-                                                <label for="zip">Zip</label>
+                                                <label for="clientZip">Zip</label>
                                                 <input type="text" class="form-control"
-                                                       id="zip" required>
+                                                       id="clientZip" required>
                                             </div>
                                         </div>
                                         <button type="button" id="1" name="user-form"
                                                 class="btn btn-acc btn-primary">Next
                                         </button>
 
-
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!--Provider Information -->
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button type="button" id='personal2' class="btn btn-link collapsed"
-                                        data-toggle="collapse"
-                                        data-target="#collapseTwo">Residential Provider
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseTwo" class="collapse"
-                             aria-labelledby="headingTwo"
-                             data-parent="#accordion">
-                            <div class="card-body">
-                                <div class="col-md-12  text-left">
-                                    <br>
-                                    <h3>Provider Information</h3>
-                                    <hr>
-                                    <form class="provider-form" novalidate>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label>First Name</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder=" first name" required>
 
-                                                <span class="glyphicon form-control-feedback"></span>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Last Name</label>
-                                                <input type="tel" class="form-control"
-                                                       placeholder="last name" required>
-                                            </div>
-
-                                            <div class="form-group col-md-6">
-                                                <label>Email</label>
-                                                <input type="email" class="form-control"
-                                                       placeholder="email" required>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Phone</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="999-999-9999" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" class="form-control"
-                                                   placeholder="1234 Main St" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address 2</label>
-                                            <input type="text" class="form-control"
-                                                   placeholder="Apartment, studio, or floor">
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label>City</label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label>State</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="state" required>
-
-                                            </div>
-                                            <div class="form-group col-md-2">
-                                                <label>Zip</label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <button type="button" id="2" name="provider-form"
-                                                class="btn btn-acc btn-primary">Next
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                <!--Provider Information -->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button type="button" id='personal2' class="btn btn-link collapsed"
+                                    data-toggle="collapse"
+                                    data-target="#collapseTwo">Residential Provider
+                            </button>
+                        </h2>
                     </div>
+                    <div id="collapseTwo" class="collapse"
+                         aria-labelledby="headingTwo"
+                         data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="col-md-12  text-left">
+                                <br>
+                                <h3>Provider Information</h3>
+                                <hr>
+                                <form class="provider-form" novalidate>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>First Name</label>
+                                            <input type="text" class="form-control" id="providerFirst"
+                                                   placeholder=" first name" required>
 
-                    <!--Guardian Form-->
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h2 class="mb-0">
-                                <button type="button" id="personal3" class="btn btn-link collapsed"
-                                        data-toggle="collapse"
-                                        data-target="#collapseThree">Guardian
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseThree" class="collapse"
-                             aria-labelledby="headingThree"
-                             data-parent="#accordion">
-                            <div class="card-body">
-                                <div class="col-md-12  text-left">
-                                    <br>
-                                    <h3>Legal Guardian Information</h3>
-                                    <hr>
-                                    <form class="guardian-form" novalidate>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label>First Name</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder=" first name" required>
-
-                                                <span class="glyphicon form-control-feedback"></span>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Last Name</label>
-                                                <input type="tel" class="form-control"
-                                                       placeholder="last name" required>
-                                            </div>
-
-                                            <div class="form-group col-md-6">
-                                                <label>Email</label>
-                                                <input type="email" class="form-control"
-                                                       placeholder="email" required>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Phone</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="999-999-9999" required>
-                                            </div>
+                                            <span class="glyphicon form-control-feedback"></span>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" class="form-control"
-                                                   placeholder="1234 Main St" required>
+                                        <div class="form-group col-md-6">
+                                            <label>Last Name</label>
+                                            <input type="tel" class="form-control" id="providerLast"
+                                                   placeholder="last name" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Address 2</label>
-                                            <input type="text" class="form-control"
-                                                   placeholder="Apartment, studio, or floor">
+
+                                        <div class="form-group col-md-6">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" id="providerEmail"
+                                                   placeholder="email" required>
                                         </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label>City</label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label>State</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="state" required>
-
-                                            </div>
-                                            <div class="form-group col-md-2">
-                                                <label>Zip</label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Phone</label>
+                                            <input type="text" class="form-control" id="providerPhone"
+                                                   placeholder="999-999-9999" required>
                                         </div>
-                                        <button type="button" id="3" name="guardian-form"
-                                                class="btn btn-acc btn-primary">Next
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Client Representative Form-->
-                        <div class="card">
-                            <div class="card-header" id="heading4">
-                                <h2 class="mb-0">
-                                    <button type="button" id="personal4" class="btn btn-link collapsed"
-                                            data-toggle="collapse"
-                                            data-target="#collapse4">NSA
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapse4" class="collapse"
-                                 aria-labelledby="heading4"
-                                 data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="col-md-12  text-left">
-                                        <br>
-                                        <h3>NSA(Client Rep.)</h3>
-                                        <hr>
-                                        <form class="rep-form" novalidate>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label>First Name</label>
-                                                    <input type="text" class="form-control"
-                                                           placeholder=" first name" required>
-
-                                                    <span class="glyphicon form-control-feedback"></span>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label>Last Name</label>
-                                                    <input type="tel" class="form-control"
-                                                           placeholder="last name" required>
-                                                </div>
-
-                                                <div class="form-group col-md-6">
-                                                    <label>Email</label>
-                                                    <input type="email" class="form-control"
-                                                           placeholder="email" required>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label>Phone</label>
-                                                    <input type="text" class="form-control"
-                                                           placeholder="999-999-9999" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="1234 Main St" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Address 2</label>
-                                                <input type="text" class="form-control"
-                                                       placeholder="Apartment, studio, or floor">
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label>City</label>
-                                                    <input type="text" class="form-control" required>
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label>State</label>
-                                                    <input type="text" class="form-control"
-                                                           placeholder="state" required>
-
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label>Zip</label>
-                                                    <input type="text" class="form-control" required>
-                                                </div>
-                                            </div>
-                                            <button type="button" id="4" name="rep-form"
-                                                    class="btn btn-acc btn-primary">Next
-                                            </button>
-                                        </form>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="heading5">
-                                <h2 class="mb-0">
-                                    <button type="button" id="personal5" class="btn btn-link collapsed"
-                                            data-toggle="collapse"
-                                            data-target="#collapse5">Emergency Contact
-                                    </button>
-                                </h2>
-                            </div>
-
-                            <!--Emergency Contact Information-->
-                            <div id="collapse5" class="collapse"
-                                 aria-labelledby="heading5"
-                                 data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="col-md-12  text-left">
-                                        <br>
-                                        <h3>Emergency Contact</h3>
-                                        <hr>
-                                        <form class="emerg-form" novalidate>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label>First Name</label>
-                                                    <input type="text" class="form-control"
-                                                           placeholder=" first name" required>
-
-                                                    <span class="glyphicon form-control-feedback"></span>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label>Last Name</label>
-                                                    <input type="tel" class="form-control"
-                                                           placeholder="last name" required>
-                                                </div>
-
-                                                <div class="form-group col-md-6">
-                                                    <label>Emergency Phone</label>
-                                                    <input type="text" class="form-control"
-                                                           placeholder="999-999-9999" required>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label>Alternate Phone</label>
-                                                    <input type="text" class="form-control"
-                                                           placeholder="999-999-9999">
-                                                </div>
-                                            </div>
-
-                                            <button type="button" id="5" name="emerg-form"
-                                                    class="btn btn-acc btn-primary">Next
-                                            </button>
-                                        </form>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" id="providerAddress"
+                                               placeholder="1234 Main St" required>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Medication Information-->
-                        <div class="card">
-                            <div class="card-header" id="heading6">
-                                <h2 class="mb-0">
-                                    <button type="button"
-                                            id="personal6"
-                                            class="btn btn-link collapsed"
-                                            data-toggle="collapse"
-                                            data-target="#collapse6">Medication
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapse6" class="collapse"
-                                 aria-labelledby="heading6" data-parent="#accordion">
-                                <div class="card-body">
-                                    <form class="med-form" novalidate>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-4">
-                                                <label>Medication and Dosage</label>
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label>Frequency Taken</label>
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label>Time Taken</label>
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                                <input type="text" class="form-control">
-                                            </div>
+                                    <div class="form-group">
+                                        <label>Address 2</label>
+                                        <input type="text" class="form-control" id="providerAddress2"
+                                               placeholder="Apartment, studio, or floor">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>City</label>
+                                            <input type="text" class="form-control"
+                                                   id="providerCity" required>
                                         </div>
-                                        <button type="button" id="6" name="med-form"
-                                                class="btn btn-acc btn-primary">Next
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>State</label>
+                                            <input type="text" class="form-control" id="providerState"
+                                                   placeholder="state" required>
 
-                        <!--Restrictions and Limitations-->
-                        <div class="card">
-                            <div class="card-header" id="heading7">
-                                <h2 class="mb-0">
-                                    <button type="button" id="personal7" class="btn btn-link collapsed"
-                                            data-toggle="collapse"
-                                            data-target="#collapse7">Alerts,
-                                        Restrictions, Limitations
-                                    </button>
-                                </h2>
-                            </div>
-                            <div id="collapse7" class="collapse"
-                                 aria-labelledby="heading7" data-parent="#accordion">
-                                <div class="card-body">
-                                    <form class="form" novalidate>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-4">
-                                                <label>Medical Alerts</label>
-                                                <br>
-                                                <textarea rows="10" cols="40"
-                                                          placeholder="allergies, high blood pressure, diabetic, etc."></textarea>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label>Physical Limitations</label>
-                                                <br>
-                                                <textarea rows="10" cols="40"
-                                                          placeholder="bending, sitting, standing, etc."></textarea>
-
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label>Diet Restrictions</label>
-                                                <br>
-                                                <textarea rows="10" cols="40"></textarea>
-                                            </div>
-                                            <button type="button" name="#rightsTab"
-                                                    class="btn-tab btn-primary">Next
-                                            </button>
                                         </div>
-                                    </form>
-                                </div>
+                                        <div class="form-group col-md-2">
+                                            <label>Zip</label>
+                                            <input type="text" class="form-control"
+                                                   id="providerZip" required>
+                                        </div>
+                                    </div>
+                                    <button type="button" id="2" name="provider-form"
+                                            class="btn btn-acc btn-primary">Next
+                                    </button>
+                                </form>
                             </div>
                         </div>
-                        <!-- accordion end -->
                     </div>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="rights">
-                <h3 class="mt-2">Notice of Participant Rights</h3>
-                <include href="views/Notice_of_Rights.html"/>
-                <button class="btn-tab btn-primary" name="#releaseTab">Next</button>
 
-            </div>
-            <div class="tab-pane fade" id="release">
-                <include href="views/release.html"/>
-                <button class="btn-tab btn-primary" name="#photoTab">Next</button>
-            </div>
-            <div class="tab-pane fade" id="photo">
-                <include href="views/photo.html"/>
-                <button class="btn-tab btn-primary" name="#appealTab">Next</button>
-            </div>
-            <div class="tab-pane fade" id="appeal">
-                <h3 class="mt-2">Appeal Grievance Procedures</h3>
-                <include href="views/grievance.html"/>
-                <button class="btn-tab btn-primary" name="#ssiTab">Next</button>
+                <!--Guardian Form-->
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button type="button" id="personal3" class="btn btn-link collapsed"
+                                    data-toggle="collapse"
+                                    data-target="#collapseThree">Guardian
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse"
+                         aria-labelledby="headingThree"
+                         data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="col-md-12  text-left">
+                                <br>
+                                <h3>Legal Guardian Information</h3>
+                                <hr>
+                                <form class="guardian-form" novalidate>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>First Name</label>
+                                            <input type="text" class="form-control" id="guardFirst"
+                                                   placeholder=" first name" required>
 
-            </div>
+                                            <span class="glyphicon form-control-feedback"></span>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Last Name</label>
+                                            <input type="tel" class="form-control" id="guardLast"
+                                                   placeholder="last name" required>
+                                        </div>
 
-            <div class="tab-pane fade" id="ssi">
-                <include href="views/ssi.html"/>
+                                        <div class="form-group col-md-6">
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" id="guardEmail"
+                                                   placeholder="email" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Phone</label>
+                                            <input type="text" class="form-control" id="guardPhone"
+                                                   placeholder="999-999-9999" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" id="guardAddress"
+                                               placeholder="1234 Main St" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address 2</label>
+                                        <input type="text" class="form-control" id="guardAddress2"
+                                               placeholder="Apartment, studio, or floor">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>City</label>
+                                            <input type="text" class="form-control"
+                                                   id="guardCity" required>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>State</label>
+                                            <input type="text" class="form-control" id="guardState"
+                                                   placeholder="state" required>
+
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label>Zip</label>
+                                            <input type="text" class="form-control"
+                                                   id="guardZip" required>
+                                        </div>
+                                    </div>
+                                    <button type="button" id="3" name="guardian-form"
+                                            class="btn btn-acc btn-primary">Next
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Client Representative Form-->
+                    <div class="card">
+                        <div class="card-header" id="heading4">
+                            <h2 class="mb-0">
+                                <button type="button" id="personal4" class="btn btn-link collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#collapse4">NSA
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapse4" class="collapse"
+                             aria-labelledby="heading4"
+                             data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="col-md-12  text-left">
+                                    <br>
+                                    <h3>NSA(Client Rep.)</h3>
+                                    <hr>
+                                    <form class="rep-form" novalidate>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label>First Name</label>
+                                                <input type="text" class="form-control" id="nsaFirst"
+                                                       placeholder=" first name" required>
+
+                                                <span class="glyphicon form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Last Name</label>
+                                                <input type="tel" class="form-control" id="nsaLast"
+                                                       placeholder="last name" required>
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label>Email</label>
+                                                <input type="email" class="form-control" id="nsaEmail"
+                                                       placeholder="email" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Phone</label>
+                                                <input type="text" class="form-control" id="nsaPhone"
+                                                       placeholder="999-999-9999" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" class="form-control" id="nsaAddress"
+                                                   placeholder="1234 Main St" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address 2</label>
+                                            <input type="text" class="form-control" id="nsaAddress2"
+                                                   placeholder="Apartment, studio, or floor">
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label>City</label>
+                                                <input type="text" class="form-control"
+                                                       id="nsaCity" required>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label>State</label>
+                                                <input type="text" class="form-control" id="nsaState"
+                                                       placeholder="state" required>
+
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                                <label>Zip</label>
+                                                <input type="text" class="form-control"
+                                                       id="nsaZip" required>
+                                            </div>
+                                        </div>
+                                        <button type="button" id="4" name="rep-form"
+                                                class="btn btn-acc btn-primary">Next
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading5">
+                            <h2 class="mb-0">
+                                <button type="button" id="personal5" class="btn btn-link collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#collapse5">Emergency Contact
+                                </button>
+                            </h2>
+                        </div>
+
+                        <!--Emergency Contact Information-->
+                        <div id="collapse5" class="collapse"
+                             aria-labelledby="heading5"
+                             data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="col-md-12  text-left">
+                                    <br>
+                                    <h3>Emergency Contact</h3>
+                                    <hr>
+                                    <form class="emerg-form" novalidate>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label>First Name</label>
+                                                <input type="text" class="form-control" id="emergFirst"
+                                                       placeholder=" first name" required>
+
+                                                <span class="glyphicon form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Last Name</label>
+                                                <input type="tel" class="form-control" id="emergLast"
+                                                       placeholder="last name" required>
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label>Emergency Phone</label>
+                                                <input type="text" class="form-control" id="emergPhone"
+                                                       placeholder="999-999-9999" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Alternate Phone</label>
+                                                <input type="text" class="form-control" id="emergAltPhone name=medications[]"
+                                                       placeholder="999-999-9999">
+                                            </div>
+                                        </div>
+
+                                        <button type="button" id="5" name="emerg-form"
+                                                class="btn btn-acc btn-primary">Next
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Medication Information-->
+                    <div class="card">
+                        <div class="card-header" id="heading6">
+                            <h2 class="mb-0">
+                                <button type="button"
+                                        id="personal6"
+                                        class="btn btn-link collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#collapse6">Medication
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapse6" class="collapse"
+                             aria-labelledby="heading6" data-parent="#accordion">
+                            <div class="card-body">
+                                <form class="med-form" novalidate>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label>Medication and Dosage</label>
+                                            <input type="text" class="form-control" name="medications[]">
+                                            <input type="text" class="form-control" name="medications[]">
+                                            <input type="text" class="form-control" name="medications[]">
+                                            <input type="text" class="form-control" name="medications[]">
+                                            <input type="text" class="form-control" name="medications[]">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Frequency Taken</label>
+                                            <input type="text" class="form-control" name="frequences[]">
+                                            <input type="text" class="form-control" name="frequences[]">
+                                            <input type="text" class="form-control" name="frequences[]">
+                                            <input type="text" class="form-control" name="frequences[]">
+                                            <input type="text" class="form-control" name="frequences[]">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Time Taken</label>
+                                            <input type="text" class="form-control" name="time[]">
+                                            <input type="text" class="form-control" name="time[]">
+                                            <input type="text" class="form-control" name="time[]">
+                                            <input type="text" class="form-control" name="time[]">
+                                            <input type="text" class="form-control" name="time[]">
+                                        </div>
+                                    </div>
+                                    <button type="button" id="6" name="med-form"
+                                            class="btn btn-acc btn-primary">Next
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Restrictions and Limitations-->
+                    <div class="card">
+                        <div class="card-header" id="heading7">
+                            <h2 class="mb-0">
+                                <button type="button" id="personal7" class="btn btn-link collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#collapse7">Alerts,
+                                    Restrictions, Limitations
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapse7" class="collapse"
+                             aria-labelledby="heading7" data-parent="#accordion">
+                            <div class="card-body">
+                                <form class="form" novalidate>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label>Medical Alerts</label>
+                                            <br>
+                                            <textarea rows="10" cols="40"
+                                                      placeholder="allergies, high blood pressure, diabetic, etc."></textarea>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Physical Limitations</label>
+                                            <br>
+                                            <textarea rows="10" cols="40"
+                                                      placeholder="bending, sitting, standing, etc."></textarea>
+
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Diet Restrictions</label>
+                                            <br>
+                                            <textarea rows="10" cols="40"></textarea>
+                                        </div>
+                                        <button type="button" name="#rightsTab"
+                                                class="btn-tab btn-primary">Next
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- accordion end -->
+                </div>
             </div>
         </div>
-        </form>
+        <div class="tab-pane fade" id="rights">
+            <h3 class="mt-2">Notice of Participant Rights</h3>
+            <include href="views/Notice_of_Rights.html"/>
+            <button class="btn-tab btn-primary" name="#releaseTab">Next</button>
+
+        </div>
+        <div class="tab-pane fade" id="release">
+            <include href="views/release.html"/>
+            <button class="btn-tab btn-primary" name="#photoTab">Next</button>
+        </div>
+        <div class="tab-pane fade" id="photo">
+            <include href="views/photo.html"/>
+            <button class="btn-tab btn-primary" name="#appealTab">Next</button>
+        </div>
+        <div class="tab-pane fade" id="appeal">
+            <h3 class="mt-2">Appeal Grievance Procedures</h3>
+            <include href="views/grievance.html"/>
+            <button class="btn-tab btn-primary" name="#ssiTab">Next</button>
+
+        </div>
+
+        <div class="tab-pane fade" id="ssi">
+            <include href="views/ssi.html"/>
+        </div>
     </div>
+
+</div>
 </div>
 
 <!--main container tag -->
