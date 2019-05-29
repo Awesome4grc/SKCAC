@@ -5,12 +5,6 @@
 $user = $_SERVER['USER'];
 require "/home/$user/config355.php";
 
-/*
-define("DB_DSN", 'mysql:dbname=bzhanggr_it355');
-define("DB_USERNAME", 'bzhanggr');
-define("DB_PASSWORD", 'Cp19860719');
-*/
-
 class Database
 {
     private $_dbh;
