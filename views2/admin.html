@@ -37,11 +37,11 @@
                     <repeat group="{{ @resultGetParticipants }}" value="{{ @each }}">
                         <tr>
                             <td>{{ @each['participant_id'] }}</td>
-                            <td>{{ @each['fname'] }} {{ $each['lname'] }}</td>
+                            <td>{{ @each['first_name'] }} {{ $each['last_name'] }}</td>
                             <td>{{ @each['email'] }}</td>
                             <td>{{ @each['phone'] }}</td>
-                            <td>{{ @each['address'] }}</td>
-                            <td>{{ @each['address2'] }}</td>
+                            <td>{{ @each['address_one'] }}</td>
+                            <td>{{ @each['address_two'] }}</td>
                             <td>{{ @each['city'] }}</td>
                             <td>{{ @each['state'] }}</td>
                             <td>{{ @each['zip'] }}</td>
