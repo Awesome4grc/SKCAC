@@ -13,6 +13,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <script src="http://code.jquery.com/jquery.js"></script>
     </head>
 
     <body>
@@ -42,11 +43,14 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Participant</a>
-                                    </h4>
+                                        <button type="button" id="personal1" class="btn btn-link"
+                                                data-toggle="collapse"
+                                                data-target="#collapse1">Participant
+                                        </button>                                    </h4>
                                 </div>
 
-                                <div id="collapse1" class="panel-collapse collapse in">
+                                <div id="collapse1" class="panel-collapse collapse in"
+                                     aria-labelledby="heading1" data-parent="#accordion">
                                     <div class="panel-body">
                                         <!-- <h3>Participant Information</h3><hr> -->
 
@@ -127,7 +131,9 @@
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <button type="submit" class="btn btn-acc btn-primary" id="1" name="participant-information-form">Next</button>
+                                                    <button type="button" id="1" name="user-form"
+                                                            class="btn btn-acc btn-primary">Next
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -140,11 +146,14 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Residential Provider</a>
-                                    </h4>
+                                        <button type="button" id='personal2' class="btn btn-link collapsed"
+                                                data-toggle="collapse"
+                                                data-target="#collapse2">Residential Provider
+                                        </button>                                    </h4>
                                 </div>
 
-                                <div id="collapse2" class="panel-collapse collapse">
+                                <div id="collapse2" class="panel-collapse collapse"
+                                     aria-labelledby="heading2" data-parent="#accordion">
                                     <div class="panel-body">
                                         <!-- <h3>Provider Information</h3><hr> -->
 
@@ -207,8 +216,9 @@
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <button type="submit" class="btn btn-acc btn-primary" id="2" name="provider-form">Next</button>
-                                                </div>
+                                                    <button type="button" id="2"
+                                                            class="btn-tab btn-primary">Next
+                                                    </button>                                                </div>
                                             </div>
                                         </form>
                                         <!-- end of the 2nd form -->
@@ -221,11 +231,14 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Guardian</a>
-                                    </h4>
+                                        <button type="button" id="personal3" class="btn btn-link collapsed"
+                                                data-toggle="collapse"
+                                                data-target="#collapse3">Guardian
+                                        </button>                                    </h4>
                                 </div>
 
-                                <div id="collapse3" class="panel-collapse collapse">
+                                <div id="collapse3" class="panel-collapse collapse"
+                                     aria-labelledby="heading3" data-parent="#accordion">
                                     <div class="panel-body">
                                         <!-- <h3>Legal Guardian Information</h3><hr> -->
 
@@ -288,7 +301,9 @@
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <button type="submit" class="btn btn-acc btn-primary" id="3" name="guardian-form">Next</button>
+                                                    <button type="button" id="3" name="provider-form"
+                                                            class="btn btn-acc btn-primary">Next
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -301,11 +316,15 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">NSA (Client Rep.)</a>
+                                        <button type="button" id="personal4" class="btn btn-link collapsed"
+                                                data-toggle="collapse"
+                                                data-target="#collapse4">NSA
+                                        </button>
                                     </h4>
                                 </div>
 
-                                <div id="collapse4" class="panel-collapse collapse">
+                                <div id="collapse4" class="panel-collapse collapse"
+                                     aria-labelledby="heading4" data-parent="#accordion">
                                     <div class="panel-body">
                                         <!-- <h3>NSA(Client Rep.)</h3><hr> -->
 
@@ -368,7 +387,9 @@
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <button type="submit" class="btn btn-acc btn-primary" id="4" name="rep-form">Next</button>
+                                                    <button type="button" id="4" name="guardian-form"
+                                                            class="btn btn-acc btn-primary">Next
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -381,11 +402,15 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Emergency Contact</a>
+                                        <button type="button" id="personal5" class="btn btn-link collapsed"
+                                                data-toggle="collapse"
+                                                data-target="#collapse5">Emergency Contact
+                                        </button>
                                     </h4>
                                 </div>
 
-                                <div id="collapse5" class="panel-collapse collapse">
+                                <div id="collapse5" class="panel-collapse collapse"
+                                     aria-labelledby="heading5" data-parent="#accordion">
                                     <div class="panel-body">
                                         <!-- <h3>Emergency Contact</h3><hr> -->
 
@@ -417,7 +442,9 @@
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <button type="submit" id="5" name="emerg-form" class="btn btn-acc btn-primary">Next</button>
+                                                    <button type="button" id="5" name="rep-form"
+                                                            class="btn btn-acc btn-primary">Next
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -431,11 +458,17 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Medication</a>
+                                        <button type="button"
+                                                id="personal6"
+                                                class="btn btn-link collapsed"
+                                                data-toggle="collapse"
+                                                data-target="#collapse6">Medication
+                                        </button>
                                     </h4>
                                 </div>
 
-                                <div id="collapse6" class="panel-collapse collapse">
+                                <div id="collapse6" class="panel-collapse collapse"
+                                     aria-labelledby="heading6" data-parent="#accordion">
                                     <div class="panel-body">
                                         <form class="med-form" action="" method="post" novalidate>
                                             <div class="form-row">
@@ -469,7 +502,9 @@
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <button type="submit" class="btn btn-acc btn-primary" id="6" name="med-form">Next</button>
+                                                    <button type="button" id="6" name="emerg-form"
+                                                            class="btn btn-acc btn-primary">Next
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -483,11 +518,16 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">Alerts, Restrictions, Limitations</a>
+                                        <button type="button" id="personal7" class="btn btn-link collapsed"
+                                                data-toggle="collapse"
+                                                data-target="#collapse7">Alerts,
+                                            Restrictions, Limitations
+                                        </button>
                                     </h4>
                                 </div>
 
-                                <div id="collapse7" class="panel-collapse collapse">
+                                <div id="collapse7" class="panel-collapse collapse"
+                                     aria-labelledby="heading7" data-parent="#accordion">
                                     <div class="panel-body">
                                         <form class="form" novalidate>
                                             <div class="form-row">
@@ -509,7 +549,9 @@
 
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
-                                                        <button type="submit" name="#rightsTab" class="btn btn-acc btn-primary">Next</button>
+                                                        <button type="button"  name="#rightsTab"
+                                                                class="btn btn-acc btn-primary">Next
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -715,6 +757,7 @@
             </div>
         </div>
         <!-- end of the Jumbotron -->
-
+        <script src="JavaScript/validation.js"></script>
+        <script src="JavaScript/nextButton.js"></script>
     </body>
 </html>
