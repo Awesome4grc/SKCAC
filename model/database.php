@@ -2,8 +2,8 @@
 
 <?php
 
-$user = $_SERVER['USER'];
-require "/home/$user/config355.php";
+//$user = $_SERVER['USER'];
+require "/home2/awesomeg/config.php";
 
 class Database
 {
