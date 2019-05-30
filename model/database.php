@@ -62,7 +62,7 @@ class Database
     function getParticipants()
     {
         // 1. defines the query
-        $sql = "SELECT * FROM participant ORDER BY lname";
+        $sql = "SELECT * FROM participant ORDER BY last_name";
 
         // 2. prepares the statement
         $statement = $this->_dbh->prepare($sql);
