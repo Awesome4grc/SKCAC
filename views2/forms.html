@@ -3,16 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <title>Forms</title>
-
+        <link href="css/styles.css" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!-- Bootstrap -->
         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script src="/vendors/formvalidation/dist/js/FormValidation.min.js"></script>
+        <script src="/vendors/formvalidation/dist/js/plugins/Bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="http://code.jquery.com/jquery.js"></script>
     </head>
 
@@ -54,20 +59,21 @@
                                     <div class="panel-body">
                                         <!-- <h3>Participant Information</h3><hr> -->
 
-                                        <form class="user-form" action="#" method="post">
+                                        <form class="user-form" novalidate>
                                             <div class="form-row">
                                                 <!-- client first name -->
                                                 <div class="form-group col-md-6">
                                                     <label for="clientFirst">First Name</label>
-                                                    <input type="text" class="form-control" id="clientFirst" name="participantFirstName" placeholder="" required>
-                                                    <div class="invalid-feedback"></div> <!-- hidden -->
+                                                    <input type="text" class="form-control" id="clientFirst" placeholder="Client first name" required> <!--name="participantFirstName"-->
+                                                     <!-- hidden -->
+                                                    <div class="invalid-feedback"> Please enter your first name.</div>
                                                 </div>
-
+                                                <span class="glyphicon form-control-feedback"></span>
                                                 <!-- client last name -->
                                                 <div class="form-group col-md-6">
                                                     <label for="clientLast">Last Name</label>
                                                     <input type="text" class="form-control" id="clientLast" name="participantLastName" placeholder="" required>
-                                                    <div class="invalid-feedback"></div> <!-- hidden -->
+                                                    <div class="invalid-feedback">Please enter your last name</div> <!-- hidden -->
                                                 </div>
                                             </div>
 
@@ -77,7 +83,7 @@
                                                     <label for="clientEmail">Email</label>
                                                     <input type="email" class="form-control" id="clientEmail" name="participantEmail" aria-describedby="emailHelp" placeholder="" data-error="email address is invalid" >
                                                     <small id="emailHelp" class="form-text text-muted"></small>
-                                                    <div class="invalid-feedback"></div> <!-- hidden -->
+                                                    <div class="invalid-feedback">Please enter a valid email</div> <!-- hidden -->
                                                 </div>
 
                                                 <!-- client phone -->
@@ -93,7 +99,7 @@
                                                 <div class="form-group col-md-12">
                                                     <label for="clientAddress">Address</label>
                                                     <input type="text" class="form-control" id="clientAddress" name="participantAddress" placeholder="1234 Main St" >
-                                                    <div class="invalid-feedback"></div> <!-- hidden -->
+                                                    <div class="invalid-feedback">Please enter your address</div> <!-- hidden -->
                                                 </div>
                                             </div>
 
@@ -111,21 +117,21 @@
                                                 <div class="form-group col-md-6">
                                                     <label for="clientCity">City</label>
                                                     <input type="text" class="form-control" id="clientCity" name="participantCity" placeholder="" >
-                                                    <div class="invalid-feedback"></div>
+                                                    <div class="invalid-feedback">Please enter your city</div>
                                                 </div>
 
                                                 <!-- participant state -->
                                                 <div class="form-group col-md-4">
                                                     <label for="clientState">State</label>
                                                     <input type="text" class="form-control" id="clientState" name="participantState" placeholder="" >
-                                                    <div class="invalid-feedback"></div>
+                                                    <div class="invalid-feedback">Please enter your state</div>
                                                 </div>
 
                                                 <!-- participant zip -->
                                                 <div class="form-group col-md-2">
                                                     <label for="clientZip">Zip</label>
                                                     <input type="text" class="form-control" id="clientZip" name="participantZip" placeholder="" >
-                                                    <div class="invalid-feedback"></div> <!-- hidden -->
+                                                    <div class="invalid-feedback">Please enter your zip code</div> <!-- hidden -->
                                                 </div>
                                             </div>
 
@@ -757,7 +763,7 @@
             </div>
         </div>
         <!-- end of the Jumbotron -->
-        <script src="JavaScript/validation.js"></script>
+
         <script src="JavaScript/nextButton.js"></script>
     </body>
 </html>
