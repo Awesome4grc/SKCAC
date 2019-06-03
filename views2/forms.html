@@ -78,7 +78,7 @@
                                                 <!-- client email -->
                                                 <div class="form-group col-md-6">
                                                     <label for="clientEmail">Email</label>
-                                                    <input type="email" class="form-control" id="clientEmail" name="participantEmail" aria-describedby="emailHelp" placeholder="" data-error="email address is invalid" >
+                                                    <input type="email" class="form-control" id="clientEmail" name="participantEmail" aria-describedby="emailHelp" placeholder="" data-error="email address is invalid" required>
                                                     <small id="emailHelp" class="form-text text-muted"></small>
                                                     <div class="invalid-feedback">Please enter a valid email</div> <!-- hidden -->
                                                 </div>
@@ -86,7 +86,7 @@
                                                 <!-- client phone -->
                                                 <div class="form-group col-md-6">
                                                     <label for="clientPhone">Phone</label>
-                                                    <input type="tel" class="form-control" id="clientPhone" name="participantPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="999-999-9999" >
+                                                    <input type="tel" class="form-control" id="clientPhone" name="participantPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="999-999-9999" required>
                                                     <div class="invalid-feedback"></div> <!-- hidden -->
                                                 </div>
                                             </div>
@@ -95,7 +95,7 @@
                                                 <!-- participant address -->
                                                 <div class="form-group col-md-12">
                                                     <label for="clientAddress">Address</label>
-                                                    <input type="text" class="form-control" id="clientAddress" name="participantAddress" placeholder="1234 Main St" >
+                                                    <input type="text" class="form-control" id="clientAddress" name="participantAddress" placeholder="1234 Main St" required>
                                                     <div class="invalid-feedback">Please enter your address</div> <!-- hidden -->
                                                 </div>
                                             </div>
@@ -113,21 +113,21 @@
                                                 <!-- participant city -->
                                                 <div class="form-group col-md-6">
                                                     <label for="clientCity">City</label>
-                                                    <input type="text" class="form-control" id="clientCity" name="participantCity" placeholder="" >
+                                                    <input type="text" class="form-control" id="clientCity" name="participantCity" placeholder="" required>
                                                     <div class="invalid-feedback">Please enter your city</div>
                                                 </div>
 
                                                 <!-- participant state -->
                                                 <div class="form-group col-md-4">
                                                     <label for="clientState">State</label>
-                                                    <input type="text" class="form-control" id="clientState" name="participantState" placeholder="" >
+                                                    <input type="text" class="form-control" id="clientState" name="participantState" placeholder="" required>
                                                     <div class="invalid-feedback">Please enter your state</div>
                                                 </div>
 
                                                 <!-- participant zip -->
                                                 <div class="form-group col-md-2">
                                                     <label for="clientZip">Zip</label>
-                                                    <input type="text" class="form-control" id="clientZip" name="participantZip" placeholder="" >
+                                                    <input type="text" class="form-control" id="clientZip" name="participantZip" placeholder="" required>
                                                     <div class="invalid-feedback">Please enter your zip code</div> <!-- hidden -->
                                                 </div>
                                             </div>
