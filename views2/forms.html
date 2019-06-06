@@ -207,7 +207,7 @@
 									<div class="panel-body">
 										
 										<!-- Provider Information Form -->
-										<form class="provider-form" action="" method="post">
+										<form class="provider-form" novalidate>
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<label>First Name</label>
@@ -215,6 +215,7 @@
 															id="providerFirst"
 															name="providerFirstName" placeholder=""
 															required>
+													<div class="invalid-feedback">Please enter their first name.</div>
 													<span class="glyphicon form-control-feedback"></span>
 												</div>
 												
@@ -224,6 +225,7 @@
 															id="providerLast"
 															name="providerLastName" placeholder=""
 															required>
+                                                    <div class="invalid-feedback">Please enter their last name.</div>
 												</div>
 											</div>
 											
@@ -233,6 +235,7 @@
 													<input type="email" class="form-control"
 															id="providerEmail" name="providerEmail"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their email.</div>
 												</div>
 												
 												<div class="form-group col-md-6">
@@ -241,6 +244,7 @@
 															id="providerPhone" name="providerPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
+                                                    <div class="invalid-feedback">Please enter their phone number.</div>
 												</div>
 											</div>
 											
@@ -251,6 +255,7 @@
 															id="providerAddress"
 															name="providerAddress"
 															placeholder="1234 Main St" required>
+                                                    <div class="invalid-feedback">Please enter their address.</div>
 												</div>
 											</div>
 											
@@ -270,6 +275,7 @@
 													<input type="text" class="form-control"
 															id="providerCity" name="providerCity"
 															required>
+                                                    <div class="invalid-feedback">Please enter their city.</div>
 												</div>
 												
 												<div class="form-group col-md-4">
@@ -277,6 +283,7 @@
 													<input type="text" class="form-control"
 															id="providerState" name="providerState"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their state.</div>
 												</div>
 												
 												<div class="form-group col-md-2">
@@ -284,13 +291,14 @@
 													<input type="text" class="form-control"
 															id="providerZip" name="providerZip"
 															required>
+                                                    <div class="invalid-feedback">Please enter their zip code.</div>
 												</div>
 											</div>
 											
 											<div class="form-row">
 												<div class="form-group col-md-12">
-													<button type="button" id="2"
-															class="btn-tab btn-primary">Next
+													<button type="button" id="2" name="provider-form"
+															class="btn btn-acc btn-primary">Next
 													</button>
 												</div>
 											</div>
@@ -318,13 +326,14 @@
 									<div class="panel-body">
 										
 										<!-- Legal Guardian Information Form -->
-										<form class="guardian-form" action="" method="post">
+										<form class="guardian-form" novalidate>
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<label>First Name</label>
 													<input type="text" class="form-control"
 															id="guardFirst" name="guardianFirstName"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their first name.</div>
 													<span class="glyphicon form-control-feedback"></span>
 												</div>
 												
@@ -333,6 +342,7 @@
 													<input type="text" class="form-control"
 															id="guardLast" name="guardianLastName"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their last name.</div>
 												</div>
 											</div>
 											
@@ -342,6 +352,7 @@
 													<input type="email" class="form-control"
 															id="guardEmail" name="guardianEmail"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their email.</div>
 												</div>
 												
 												<div class="form-group col-md-6">
@@ -350,6 +361,7 @@
 															id="guardPhone" name="GuardianPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
+                                                    <div class="invalid-feedback">Please enter their phone number.</div>
 												</div>
 											</div>
 											
@@ -359,6 +371,7 @@
 													<input type="text" class="form-control"
 															id="guardAddress" name="guardianAddress"
 															placeholder="1234 Main St" required>
+                                                    <div class="invalid-feedback">Please enter their address.</div>
 												</div>
 											</div>
 											
@@ -378,6 +391,7 @@
 													<input type="text" class="form-control"
 															id="guardCity" name="guardianCity"
 															required>
+                                                    <div class="invalid-feedback">Please enter their city.</div>
 												</div>
 												
 												<div class="form-group col-md-4">
@@ -385,6 +399,7 @@
 													<input type="text" class="form-control"
 															id="guardState" name="guardianState"
 															placeholder="state" required>
+                                                    <div class="invalid-feedback">Please enter their state.</div>
 												</div>
 												
 												<div class="form-group col-md-2">
@@ -392,13 +407,14 @@
 													<input type="text" class="form-control"
 															id="guardZip" name="guardianZip"
 															required>
+                                                    <div class="invalid-feedback">Please enter their zip code.</div>
 												</div>
 											</div>
 											
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<button type="button" id="3"
-															name="provider-form"
+															name="guardian-form"
 															class="btn btn-acc btn-primary">Next
 													</button>
 												</div>
@@ -426,13 +442,14 @@
 									<div class="panel-body">
 										
 										<!-- NSA(Client Rep.) Form -->
-										<form class="rep-form" action="" method="post">
+										<form class="rep-form" novalidate>
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<label>First Name</label>
 													<input type="text" class="form-control"
 															id="nsaFirst" name="repFirstName"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their first name.</div>
 													<span class="glyphicon form-control-feedback"></span>
 												</div>
 												
@@ -441,6 +458,7 @@
 													<input type="text" class="form-control"
 															id="nsaLast" name="repLastName"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their last name.</div>
 												</div>
 											</div>
 											
@@ -450,6 +468,7 @@
 													<input type="email" class="form-control"
 															id="nsaEmail" name="repEmail"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their email.</div>
 												</div>
 												
 												<div class="form-group col-md-6">
@@ -458,54 +477,14 @@
 															id="nsaPhone" name="repPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
-												</div>
-											</div>
-											
-											<div class="form-row">
-												<div class="form-group col-md-12">
-													<label>Address</label>
-													<input type="text" class="form-control"
-															id="nsaAddress" name="repAddress"
-															placeholder="1234 Main St" required>
-												</div>
-											</div>
-											
-											<div class="form-row">
-												<div class="form-group col-md-12">
-													<label>Address 2</label>
-													<input type="text" class="form-control"
-															id="nsaAddress2" name="repAddress2"
-															placeholder="apartment, studio, or floor">
-												</div>
-											</div>
-											
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<label>City</label>
-													<input type="text" class="form-control"
-															id="nsaCity" name="repCity"
-															placeholder="" required>
-												</div>
-												
-												<div class="form-group col-md-4">
-													<label>State</label>
-													<input type="text" class="form-control"
-															id="nsaState" name="repState"
-															placeholder="" required>
-												</div>
-												
-												<div class="form-group col-md-2">
-													<label>Zip</label>
-													<input type="text" class="form-control"
-															id="nsaZip" name="repZip" placeholder=""
-															required>
+                                                    <div class="invalid-feedback">Please enter their phone number.</div>
 												</div>
 											</div>
 											
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<button type="button" id="4"
-															name="guardian-form"
+															name="rep-form"
 															class="btn btn-acc btn-primary">Next
 													</button>
 												</div>
@@ -534,13 +513,14 @@
 									<div class="panel-body">
 										
 										<!-- Emergency Contact Form -->
-										<form class="emerg-form" action="" method="post" novalidate>
+										<form class="emerg-form" novalidate>
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<label>First Name</label>
 													<input type="text" class="form-control"
 															id="emergFirst" name="emergFirstName"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their first name.</div>
 													<span class="glyphicon form-control-feedback"></span>
 												</div>
 												
@@ -549,6 +529,7 @@
 													<input type="text" class="form-control"
 															id="emergLast" name="emergLastName"
 															placeholder="" required>
+                                                    <div class="invalid-feedback">Please enter their last name.</div>
 												</div>
 											</div>
 											
@@ -559,6 +540,7 @@
 															id="emergPhone" name="emergPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
+                                                    <div class="invalid-feedback">Please enter their phone number.</div>
 												</div>
 												
 												<div class="form-group col-md-6">
@@ -567,12 +549,13 @@
 															id="emergAltPhone" name=emergPhone2"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999">
+                                                    <div class="invalid-feedback">Please enter their second number</div>
 												</div>
 											</div>
 											
 											<div class="form-row">
 												<div class="form-group col-md-12">
-													<button type="button" id="5" name="rep-form"
+													<button type="button" id="5" name="emerg-form"
 															class="btn btn-acc btn-primary">Next
 													</button>
 												</div>
@@ -599,7 +582,7 @@
 								<div id="collapse6" class="panel-collapse collapse"
 										aria-labelledby="heading6" data-parent="#accordion">
 									<div class="panel-body">
-										<form class="med-form" action="" method="post" novalidate>
+										<form class="med-form" novalidate>
 											<div class="form-row">
 												<div class="form-group col-md-4">
 													<label>Medication and Dosage (med-form)</label>
@@ -646,7 +629,7 @@
 											
 											<div class="form-row">
 												<div class="form-group col-md-12">
-													<button type="button" id="6" name="emerg-form"
+													<button type="button" id="6" name="med-form"
 															class="btn btn-acc btn-primary">Next
 													</button>
 												</div>
@@ -673,7 +656,7 @@
 								<div id="collapse7" class="panel-collapse collapse"
 										aria-labelledby="heading7" data-parent="#accordion">
 									<div class="panel-body">
-										<form class="form" novalidate>
+										<form class="alert-form" novalidate>
 											<div class="form-row">
 												<div class="form-group col-md-4">
 													<label>Medical Alerts</label>
