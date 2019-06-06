@@ -35,7 +35,7 @@
 						<a data-toggle="tab" href="#1st">Participant Info</a>
 					</li>
 					<li>
-						<a data-toggle="tab" href="#2nd">Notice of Rights</a>
+						<a data-toggle="tab" href="#2nd" id="tab2">Notice of Rights</a>
 					</li>
 					<li>
 						<a data-toggle="tab" href="#3rd">Release of Information</a>
@@ -681,9 +681,9 @@
 												
 												<div class="form-row">
 													<div class="form-group col-md-12">
-														<button type="button" name="#rightsTab"
-																class="btn btn-acc btn-primary">Next
-														</button>
+														<a data-toggle="tab" href="#tab2"><button type="button" name="#rightsTab"
+																class="btn btn-acc btn-primary">Next</button></a>
+
 													</div>
 												</div>
 											</div>
@@ -700,7 +700,7 @@
 					<div id="2nd" class="tab-pane fade">
 						<h3></h3>
 						
-						<form action="" method="post">
+						<form class="rights">
 							<p>As a participant of services provided by SKCAC Industries and Employment Services, you have the right to:</p>
 							<p>- Respectful staff-to-participant interactions;</p>
 							<p>- Be treated with dignity and respect;</p>
@@ -739,7 +739,7 @@
 								</label>
 							</div>
 							
-							<button type="submit" class="btn btn-acc btn-primary">Next</button>
+							<a data-toggle="tab" href="#3rd"><button type="button" class="btn btn-acc btn-primary">Next</button></a>
 						</form>
 						<!-- end of form -->
 					</div>
@@ -807,7 +807,7 @@
 								</label>
 							</div>
 							
-							<button type="submit" class="btn btn-acc btn-primary">Next</button>
+							<a data-toggle="tab" href="#4th"><button type="button" class="btn btn-acc btn-primary">Next</button></a>
 						</form>
 					</div>
 					<!-- end of 3rd tab pane -->
@@ -828,7 +828,7 @@
 						
 						<div class="checkbox">
 							<label>
-								<input type="checkbox" name="remember">
+								<input type="checkbox" name="remember" required>
 								Program Participant Acknowledgement
 							</label>
 						</div>
@@ -840,41 +840,38 @@
 							</label>
 						</div>
 						
-						<button type="submit" class="btn btn-acc btn-primary">Next</button>
+						<a data-toggle="tab" href="#5th"><button type="button" class="btn btn-primary" name="">Next</button></a>
+
 					</div>
 					<!-- end of 4th tab pane -->
 					
 					<div id="5th" class="tab-pane fade">
 						<h3></h3>
-						<p></p>
-						
-						<p>As a participant of services provided by SKCAC Industries and Employment Services, you have the right to:</p>
-						<p>- Respectful staff-to-participant interactions;</p>
-						<p>- Be treated with dignity and respect;</p>
-						<p>- Be free from any kind of abuse or punishment including neglect, financial exploitation, abandonment, humiliation, retaliation, verbal, mental, physical and/or sexual abuse;</p>
-						<p>- Be free from discrimination and harassment on the basis of race, color, national origin, gender, age, religion, creed, marital status, disability, sexual orientation, or the presence of any physical, mental or sensory disability;</p>
-						<p>- Be compensated for work at prevailing wages and commensurate with abilities;</p>
-						<p>- Be free from invasion of privacy;</p>
-						<p>- Have information about you treated confidentially;</p>
-						<p>- Actively participate in the development/modification of your service program;</p>
-						<p>- Select your own vocational goals and have final approval on all plans SKCAC helps you with or makes for you;</p>
-						<p>- Be provided services in your best interest and related to your needs;</p>
-						<p>- Review your service records, have access to and release of your personal records, as requested;</p>
-						<p>- Be fully informed regarding fees to be charged and methods for payment;</p>
-						<p>- Be provided with rules and regulation governing conduct and responsibilities of SKCAC participants and employees;</p>
-						<p>- Register complaints and recommendations without interference, reprisal or retaliation;</p>
-						<p>- An appeal/grievance process if you disagree with a SKCAC decision and that the action will not result in retaliation or barriers to services;</p>
-						<p>- Involve others in the planning process (spouse, parents, guardian, advocates, etc.);</p>
-						<p>- Informed consent about service delivery, release of information, composition of service delivery team, and involvement in research projects;</p>
-						<p>- Informed right of refusal, when consent is required, with explanation of risks and adverse consequences of the refusal;</p>
-						<p>- Access to self help and advocacy services;</p>
-						<p>- Access or referral to legal entities for appropriate representation, if needed;</p>
-						<p>- Investigation and resolution of alleged infringement of rights.</p>
-						<p>- This information has been reviewed with me and I understand my rights as a participant of services provided by SKCAC Industries and Employment Services</p>
-						
-						<div class="checkbox">
+
+                        <h2>Appeal/Grievance Procedure</h2>
+                        <p>
+                        Please know that you may have an advocate to support and/or to represent you at any step of this
+                            process and you are protected from any and all retaliation or reprisal based on your concerns.
+                        <br>
+                        From time to time you or your parent/guardian may disagree with a decision made by staff of SKCAC. When this happens, we want to make sure all conflicts are fully negotiated. If a conflict arises, which cannot be resolved through regular lines of communication, please observe the following procedure:
+                        <br>
+                        1. Attempt to work out the conflict with the immediate person in charge, your Employment Specialist or Supervisor. Try to work out the conflict and if the conflict cannot be resolved move on to the next step.
+
+                        From this point forward in the process, each step will be documented in writing.
+                        <br>
+                        2. Ask for a meeting with the Program Services representative and explain the situation to them. They may ask you to put the disagreement in writing and the Executive Director will make a decision on the conflict within five working days.
+                        <br>
+                        3. If you are not satisfied with the decision, please make an appointment, or contact the Executive Director of SKCAC and explain the situation to them. They may also ask you to put the conflict in writing. The Executive Director will make a decision regarding the conflict within five working days. If you are still not satisfied with the decision of the Executive Director, and then he/she will refer you to a representative of the Board of Directors, who will review your complaint or conflict, make a decision in writing and give you a copy within five working days after the next scheduled Board of Directors meeting.
+                        <br>
+                        4. If you still are not satisfied with the decision, then you will be referred to a person or organization not affiliated with SKCAC, who will proceed as a mediator. Their job is to listen to you, your parent/guardian, and/or your advocate and SKCAC and to reach a final decision concerning your conflict.
+                        <br>
+                        The mediator may be a staff member of the ARC, a professional mediator or organization, or someone you and SKCAC both agree on. If the person is a professional mediator and charges for the service, the parties will divide the cost evenly, unless other arrangements have been made. The mediator will set the guidelines for the process and keep all parties informed of the process, according to the established guidelines. Mediation is voluntary and not legally binding.
+
+                        Any grievance action will not result in retaliation or barriers to services to you or anyone involved in the grievance process
+                        </p>
+                        <div class="checkbox">
 							<label>
-								<input type="checkbox">
+								<input type="checkbox" required>
 								Program Participant Acknowledgement
 							</label>
 						</div>
@@ -886,14 +883,14 @@
 							</label>
 						</div>
 						
-						<button type="submit" class="btn btn-acc btn-primary">Next</button>
+						<a data-toggle="tab" href="#6th"><button type="button" class="btn btn-primary" href="#6th">Next</button></a>
 					</div>
 					
 					<div id="6th" class="tab-pane fade">
 						<h3></h3>
 						<p></p>
 						
-						<form>
+						<form class="ssi-form">
 							<h3 class="mt-2"> Title II/Medicare and SSI/Medicaid</h3>
 							<p>I hereby acknowledge that I have received information to find Title II Benefits: SSDI (Disability Insurance),
 								CDB (Childhood Disability Benefits) and Medicare 2018 and Supplemental Security Income and Medicaid 2018
@@ -903,15 +900,17 @@
 							</p>
 							
 							<label>SSDI Amount
-								<input type="text" id="amount1">
+								<input type="text" id="amount1" required>
+                                <div class="invalid-feedback">Please enter an amount.</div>
 							</label>
 							
 							<label> SSI Amount
-								<input type="text" id="amount2">
+								<input type="text" id="amount2" required>
+                                <div class="invalid-feedback">Please enter an amount.</div>
 							</label>
 							<br>
 							
-							<button type="submit" class="btn btn-acc btn-primary">Submit</button>
+							<!--<button type="submit" class="btn btn-acc btn-primary">Submit</button>-->
 						</form>
 					</div>
 				</div>
