@@ -28,9 +28,11 @@
 				
 				<h1>SKCAC Forms</h1>
 				<ul class="nav nav-tabs">
+					<!--
 					<li class="active">
 						<a data-toggle="tab" href="views2/home.html">Home</a>
 					</li>
+					-->
 					<li>
 						<a data-toggle="tab" href="#1st">Participant Info</a>
 					</li>
@@ -78,9 +80,9 @@
 											<div class="form-row">
 												<!-- client first name -->
 												<div class="form-group col-md-6">
-													<label for="clientFirst">First Name</label>
+													<label for="participantFirst">First Name</label>
 													<input type="text" class="form-control"
-															id="clientFirst"
+															id="participantFirst"
 														   	name="participantFirstName"
 														   	placeholder=""
 															required>
@@ -90,9 +92,9 @@
 												<span class="glyphicon form-control-feedback"></span>
 												<!-- client last name -->
 												<div class="form-group col-md-6">
-													<label for="clientLast">Last Name</label>
+													<label for="participantLast">Last Name</label>
 													<input type="text" class="form-control"
-															id="clientLast"
+															id="participantLast"
 															name="participantLastName"
 															placeholder="" required>
 													<div class="invalid-feedback">Please enter your last name</div> <!-- hidden -->
@@ -102,9 +104,9 @@
 											<div class="form-row">
 												<!-- client email -->
 												<div class="form-group col-md-6">
-													<label for="clientEmail">Email</label>
+													<label for="participantEmail">Email</label>
 													<input type="email" class="form-control"
-															id="clientEmail" name="participantEmail"
+															id="participantEmail" name="participantEmail"
 															aria-describedby="emailHelp"
 															placeholder=""
 															data-error="email address is invalid"
@@ -116,9 +118,9 @@
 												
 												<!-- client phone -->
 												<div class="form-group col-md-6">
-													<label for="clientPhone">Phone</label>
+													<label for="participantPhone">Phone</label>
 													<input type="tel" class="form-control"
-															id="clientPhone" name="participantPhone"
+															id="participantPhone" name="participantPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
 													<div class="invalid-feedback">Please enter a valid phone number</div> <!-- hidden -->
@@ -128,9 +130,9 @@
 											<div class="form-row">
 												<!-- participant address -->
 												<div class="form-group col-md-12">
-													<label for="clientAddress">Address</label>
+													<label for="participantAddress">Address</label>
 													<input type="text" class="form-control"
-															id="clientAddress"
+															id="participantAddress"
 															name="participantAddress"
 															placeholder="1234 Main St" required>
 													<div class="invalid-feedback">Please enter your address</div> <!-- hidden -->
@@ -140,9 +142,9 @@
 											<div class="form-row">
 												<!-- participant address 2 -->
 												<div class="form-group col-md-12">
-													<label for="clientAddress2">Address 2</label>
+													<label for="participantAddress2">Address 2</label>
 													<input type="text" class="form-control"
-															id="clientAddress2"
+															id="participantAddress2"
 															name="participantAddress2"
 															placeholder="apartment, studio, or floor">
 													<div class="invalid-feedback"></div> <!-- hidden -->
@@ -152,27 +154,27 @@
 											<div class="form-row">
 												<!-- participant city -->
 												<div class="form-group col-md-6">
-													<label for="clientCity">City</label>
+													<label for="participantCity">City</label>
 													<input type="text" class="form-control"
-															id="clientCity" name="participantCity"
+															id="participantCity" name="participantCity"
 															placeholder="" required>
 													<div class="invalid-feedback">Please enter your city</div>
 												</div>
 												
 												<!-- participant state -->
 												<div class="form-group col-md-4">
-													<label for="clientState">State</label>
+													<label for="participantState">State</label>
 													<input type="text" class="form-control"
-															id="clientState" name="participantState"
+															id="participantState" name="participantState"
 															placeholder="" required>
 													<div class="invalid-feedback">Please enter your state</div>
 												</div>
 												
 												<!-- participant zip -->
 												<div class="form-group col-md-2">
-													<label for="clientZip">Zip</label>
+													<label for="participantZip">Zip</label>
 													<input type="text" class="form-control"
-															id="clientZip" name="participantZip"
+															id="participantZip" name="participantZip"
 															placeholder="" required>
 													<div class="invalid-feedback">Please enter your zip code</div> <!-- hidden -->
 												</div>
@@ -180,9 +182,9 @@
 											
 											<div class="form-row">
 												<div class="form-group col-md-12">
-													<input type="submit" id="1" name="user-form"
-															class="btn btn-acc btn-primary" value="Next">
-													</input>
+													<button type="button" id="1" name="user-form"
+															class="btn btn-acc btn-primary">Next
+													</button>
 												</div>
 											</div>
 										</form>

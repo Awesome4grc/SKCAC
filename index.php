@@ -1,10 +1,3 @@
-<!--
-
-Author: Awesome Four (Adolfo, Alec, Bo, Keith)
-Date:   4/25/2019
-File: index.php
-
--->
 <?php
 
 //turn on error reporting
@@ -14,12 +7,15 @@ error_reporting(E_ALL);
 //require autoload
 require_once('vendor/autoload.php');
 //require_once ('model/db-functions.php');
+require_once('model/validate.php');
 
 //create an instance of the BASE CLASS
 $f3 = Base::instance();
 
 //turn on fat-free error reporting
 $f3->set('DEBUG', 3);
+
+session_start();
 
 // creates a database object
 $db = new Database();
@@ -53,6 +49,9 @@ else{
 
 //define a default route
 $f3->route('GET /', function() {
+
+    $_SESSION = array();
+
     $view = new Template();
     echo $view->render('views2/forms_and_admin.html');
 });
@@ -80,73 +79,140 @@ $f3->route('GET|POST /oldForms', function() {
 
 //define a default route
 $f3->route('GET|POST /forms', function($f3) {
+
+    global $db;
+
+
     // if the form has been submitted (via POST), validates it
-    if (!empty($_POST)) {
+    //if (!empty($_POST)) {
+
+        /*
         // gets all the data from the participant info form
-        $pFName = $_POST['participantFirstName'];
-        $pLName = $_POST['participantLastName'];
-        $pEmail = $_POST['participantEmail'];
-        $pPhone = $_POST['participantPhone'];
-        $pAddress = $_POST['participantAddress'];
-        $pAddress2 = $_POST['participantAddress2'];
-        $pCity = $_POST['participantCity'];
-        $pState = $_POST['participantState'];
-        $pZip = $_POST['participantZip'];
+        $participantFirstName = $_POST['participantFirstName'];
+        $participantLastName = $_POST['participantLastName'];
+        $participantEmail = $_POST['participantEmail'];
+        $participantPhone = $_POST['participantPhone'];
+        $participantAddress = $_POST['participantAddress'];
+        $participantAddress2 = $_POST['participantAddress2'];
+        $participantCity = $_POST['participantCity'];
+        $participantState = $_POST['participantState'];
+        $participantZip = $_POST['participantZip'];
+        */
+
+        /*
+        // stores all the data to hive for the purposes of sticky form and data validation
+        $f3->set('participantFirstName', $participantFirstName);
+        $f3->set('participantLastName', $participantLastName);
+        $f3->set('participantEmail', $participantEmail);
+        $f3->set('participantPhone', $participantPhone);
+        $f3->set('participantAddress', $participantAddress);
+        $f3->set('participantAddress2', $participantAddress2);
+        $f3->set('participantCity', $participantCity);
+        $f3->set('participantState', $participantState);
+        $f3->set('participantZip', $participantZip);
+        */
+
+        /*
+        $_SESSION['participantFirstName'] = $participantFirstName; // required
+        $_SESSION['participantLastName'] = $participantLastName; // required
+        $_SESSION['participantEmail'] = $participantEmail; // optional
+        $_SESSION['participantPhone'] = $participantPhone; // optional
+        $_SESSION['participantAddress'] = $participantAddress; // optional
+        $_SESSION['participantAddress2'] = $participantAddress2; // optional
+        $_SESSION['participantCity'] = $participantCity; // optional
+        $_SESSION['participantState'] = $participantState; // optional
+        $_SESSION['participantZip'] = $participantZip; // optional
+        */
+
+        //$f3->reroute('confirmation');
+    //}
+
+    /*
+    if (!empty($_POST['provider-form'])) {
+
+        $providerFirstName = $_POST['providerFirstName'];
+        $providerLastName = $_POST['providerLastName'];
+        $providerEmail = $_POST['providerEmail'];
+        $providerPhone = $_POST['providerPhone'];
+        $providerAddress = $_POST['providerAddress'];
+        $providerAddress2 = $_POST['providerAddress2'];
+        $providerCity = $_POST['providerCity'];
+        $providerState = $_POST['providerState'];
+        $providerZip = $_POST['providerZip'];
+
 
         // stores all the data to hive for the purposes of sticky form and data validation
-        $f3->set('pFName', $pFName);
-        $f3->set('pLName', $pLName);
-        $f3->set('pEmail', $pEmail);
-        $f3->set('pPhone', $pPhone);
-        $f3->set('pAddress', $pAddress);
-        $f3->set('pAddress2', $pAddress2);
-        $f3->set('pCity', $pCity);
-        $f3->set('pState', $pState);
-        $f3->set('pZip', $pZip);
+        $f3->set('participantFirstName', $participantFirstName);
+        $f3->set('participantLastName', $participantLastName);
+        $f3->set('participantEmail', $participantEmail);
+        $f3->set('participantPhone', $participantPhone);
+        $f3->set('participantAddress', $participantAddress);
+        $f3->set('participantAddress2', $participantAddress2);
+        $f3->set('participantCity', $participantCity);
+        $f3->set('participantState', $participantState);
+        $f3->set('participantZip', $participantZip);
 
+
+        $_SESSION['providerFirstName'] = $providerFirstName; // required
+        $_SESSION['providerLastName'] = $providerLastName; // required
+        $_SESSION['providerEmail'] = $providerEmail; // optional
+        $_SESSION['providerPhone'] = $providerPhone; // optional
+        $_SESSION['providerAddress'] = $providerAddress; // optional
+        $_SESSION['providerAddress2'] = $providerAddress2; // optional
+        $_SESSION['providerCity'] = $providerCity; // optional
+        $_SESSION['providerState'] = $providerState; // optional
+        $_SESSION['providerZip'] = $providerZip; // optional
+
+
+        //$f3->reroute('confirmation');
+    }
+    */
+
+
+
+        /*
         if (validateParticipantInfoForm()) {
             // stores data in session
-            $_SESSION['pFName'] = $pFName; // required
-            $_SESSION['pLName'] = $pLName; // required
-
-            $_SESSION['pEmail'] = $pEmail; // optional
-            $_SESSION['pPhone'] = $pPhone; // optional
-            $_SESSION['pAddress'] = $pAddress; // optional
-            $_SESSION['pAddress'] = $pAddress2; // optional
-            $_SESSION['pCity'] = $pCity; // optional
-            $_SESSION['pState'] = $pState; // optional
-            $_SESSION['pZip'] = $pZip; // optional
+            $_SESSION['participantFirstName'] = $participantFirstName; // required
+            $_SESSION['participantLastName'] = $participantLastName; // required
+            $_SESSION['participantEmail'] = $participantEmail; // optional
+            $_SESSION['participantPhone'] = $participantPhone; // optional
+            $_SESSION['participantAddress'] = $participantAddress; // optional
+            $_SESSION['participantAddress2'] = $participantAddress2; // optional
+            $_SESSION['participantCity'] = $participantCity; // optional
+            $_SESSION['participantState'] = $participantState; // optional
+            $_SESSION['participantZip'] = $participantZip; // optional
 
             // sends email notification to recipient(s)
             $recipient = "bbx719@hotmail.com";
-            $subject = "$pFName Just Updated Participant Information";
+            $subject = "$participantFirstName Just Updated Participant Information";
             //$sender = $_POST["name"];
-            $senderEmail = "sender@email.address";
+            //$senderEmail = "sender@email.address";
             //$name = $_POST["name"];
             //$message = $_POST["message"];
-            $emailBody = "Participant First Name: $pFName\n".
-                "Participant Last Name: $pLName\n".
-                "E-mail: $pEmail\n".
-                "Phone: $pPhone\n".
-                "Address: $pAddress\n".
-                "Address2: $pAddress2\n".
-                "City: $pCity\n".
-                "State: $pState\n".
-                "Zip: $pZip\n";
+            $emailBody = "Participant First Name: $participantFirstName\n".
+                "Participant Last Name: $participantLastName\n".
+                "E-mail: $participantEmail\n".
+                "Phone: $participantPhone\n".
+                "Address: $participantAddress\n".
+                "Address2: $participantAddress2\n".
+                "City: $participantCity\n".
+                "State: $participantState\n".
+                "Zip: $participantZip\n";
 
             mail($recipient, $subject, $emailBody, "From: SKCAC@example.com");
 
             // creates a participant object
-            $participant = new Participant($pFName, $pLName, $pEmail, $pPhone, $pAddress, $pAddress2, $pCity, $pState, $pZip);
+            $participant = new Participant($participantFirstName, $participantLastName, $participantEmail, $participantPhone, $participantAddress, $participantAddress2, $participantCity, $participantState, $participantZip);
 
-            global $db;
+
             $db->insertParticipant($participant);
 
 
             // reroute if all data are valid
-            $f3->reroute('/confirmation');
-        }
-    }
+            $f3->reroute('confirmation');
+        }*/
+
 
     $view = new Template();
     echo $view->render('views2/forms.html');
@@ -154,6 +220,8 @@ $f3->route('GET|POST /forms', function($f3) {
 
 // defines a route for the confirmation page
 $f3->route('GET|POST /confirmation', function($f3) {
+
+    // do something here...
 
 
     $view = new Template();
