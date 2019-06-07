@@ -104,7 +104,7 @@ $f3->route('GET|POST /forms', function($f3) {
         $f3->set('pState', $pState);
         $f3->set('pZip', $pZip);
 
-        if (validateParticipantInformationForm()) {
+        if (validateParticipantInfoForm()) {
             // stores data in session
             $_SESSION['pFName'] = $pFName; // required
             $_SESSION['pLName'] = $pLName; // required
