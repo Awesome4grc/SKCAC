@@ -1,5 +1,5 @@
 <?php
-    function validateParticipantInformationForm() {
+    function validateParticipantInfoForm() {
         global $f3;
         $isValid = true;
 
