@@ -152,6 +152,11 @@ $f3->route('GET|POST /forms', function($f3) {
     echo $view->render('views2/forms.html');
 });
 
+// defines a route for the confirmation page
+$f3->route('GET|POST /confirmation', function($f3) {
+
+});
+
 $f3->route('GET /thank_you', function() {
 
     $view = new Template();
