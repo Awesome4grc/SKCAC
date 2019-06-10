@@ -28,11 +28,9 @@
 				
 				<h1>SKCAC Forms</h1>
 				<ul class="nav nav-tabs">
-					<!--
 					<li class="active">
 						<a data-toggle="tab" href="views2/home.html">Home</a>
 					</li>
-					-->
 					<li>
 						<a data-toggle="tab" href="#1st">Participant Info</a>
 					</li>
@@ -80,21 +78,19 @@
 											<div class="form-row">
 												<!-- client first name -->
 												<div class="form-group col-md-6">
-													<label for="participantFirst">First Name</label>
+													<label for="clientFirst">First Name</label>
 													<input type="text" class="form-control"
-															id="participantFirst"
-														   	name="participantFirstName"
-														   	placeholder=""
-															required>
+															id="clientFirst" placeholder=""
+															required> <!--name="participantFirstName"-->
 													<!-- hidden -->
 													<div class="invalid-feedback">Please enter your first name.</div>
 												</div>
 												<span class="glyphicon form-control-feedback"></span>
 												<!-- client last name -->
 												<div class="form-group col-md-6">
-													<label for="participantLast">Last Name</label>
+													<label for="clientLast">Last Name</label>
 													<input type="text" class="form-control"
-															id="participantLast"
+															id="clientLast"
 															name="participantLastName"
 															placeholder="" required>
 													<div class="invalid-feedback">Please enter your last name</div> <!-- hidden -->
@@ -104,9 +100,9 @@
 											<div class="form-row">
 												<!-- client email -->
 												<div class="form-group col-md-6">
-													<label for="participantEmail">Email</label>
+													<label for="clientEmail">Email</label>
 													<input type="email" class="form-control"
-															id="participantEmail" name="participantEmail"
+															id="clientEmail" name="participantEmail"
 															aria-describedby="emailHelp"
 															placeholder=""
 															data-error="email address is invalid"
@@ -118,9 +114,9 @@
 												
 												<!-- client phone -->
 												<div class="form-group col-md-6">
-													<label for="participantPhone">Phone</label>
+													<label for="clientPhone">Phone</label>
 													<input type="tel" class="form-control"
-															id="participantPhone" name="participantPhone"
+															id="clientPhone" name="participantPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
 													<div class="invalid-feedback">Please enter a valid phone number</div> <!-- hidden -->
@@ -130,9 +126,9 @@
 											<div class="form-row">
 												<!-- participant address -->
 												<div class="form-group col-md-12">
-													<label for="participantAddress">Address</label>
+													<label for="clientAddress">Address</label>
 													<input type="text" class="form-control"
-															id="participantAddress"
+															id="clientAddress"
 															name="participantAddress"
 															placeholder="1234 Main St" required>
 													<div class="invalid-feedback">Please enter your address</div> <!-- hidden -->
@@ -142,9 +138,9 @@
 											<div class="form-row">
 												<!-- participant address 2 -->
 												<div class="form-group col-md-12">
-													<label for="participantAddress2">Address 2</label>
+													<label for="clientAddress2">Address 2</label>
 													<input type="text" class="form-control"
-															id="participantAddress2"
+															id="clientAddress2"
 															name="participantAddress2"
 															placeholder="apartment, studio, or floor">
 													<div class="invalid-feedback"></div> <!-- hidden -->
@@ -154,27 +150,27 @@
 											<div class="form-row">
 												<!-- participant city -->
 												<div class="form-group col-md-6">
-													<label for="participantCity">City</label>
+													<label for="clientCity">City</label>
 													<input type="text" class="form-control"
-															id="participantCity" name="participantCity"
+															id="clientCity" name="participantCity"
 															placeholder="" required>
 													<div class="invalid-feedback">Please enter your city</div>
 												</div>
 												
 												<!-- participant state -->
 												<div class="form-group col-md-4">
-													<label for="participantState">State</label>
+													<label for="clientState">State</label>
 													<input type="text" class="form-control"
-															id="participantState" name="participantState"
+															id="clientState" name="participantState"
 															placeholder="" required>
 													<div class="invalid-feedback">Please enter your state</div>
 												</div>
 												
 												<!-- participant zip -->
 												<div class="form-group col-md-2">
-													<label for="participantZip">Zip</label>
+													<label for="clientZip">Zip</label>
 													<input type="text" class="form-control"
-															id="participantZip" name="participantZip"
+															id="clientZip" name="participantZip"
 															placeholder="" required>
 													<div class="invalid-feedback">Please enter your zip code</div> <!-- hidden -->
 												</div>
@@ -665,14 +661,14 @@
 												<div class="form-group col-md-4">
 													<label>Medical Alerts</label>
 													<br>
-													<textarea rows="10" cols="40"
+													<textarea id="medicalAlerts" rows="10" cols="40"
 															placeholder="allergies, high blood pressure, diabetic, etc."></textarea>
 												</div>
 												
 												<div class="form-group col-md-4">
 													<label>Physical Limitations</label>
 													<br>
-													<textarea rows="10" cols="40"
+													<textarea id="physicalLimitations" rows="10" cols="40"
 															placeholder="bending, sitting, standing, etc."></textarea>
 												
 												</div>
@@ -680,7 +676,7 @@
 												<div class="form-group col-md-4">
 													<label>Diet Restrictions</label>
 													<br>
-													<textarea rows="10" cols="40"></textarea>
+													<textarea id="dietRestrictions" rows="10" cols="40"></textarea>
 												</div>
 												
 												<div class="form-row">
@@ -914,7 +910,7 @@
 							</label>
 							<br>
 							
-							<button href="confirmation" type="button" class="btn btn-acc btn-primary">Submit</button>
+							<!--<button type="submit" class="btn btn-acc btn-primary">Submit</button>-->
 						</form>
 					</div>
 				</div>
