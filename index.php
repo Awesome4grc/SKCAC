@@ -73,7 +73,7 @@ $f3->route('GET|POST /forms', function() {
     echo $view->render('views2/home.html');
 });
 
-$f3->route('GET|POST /oldForms', function() {
+$f3->route('GET|POST /forms', function() {
     $view = new Template();
     echo $view->render('views/forms.html');
 });
