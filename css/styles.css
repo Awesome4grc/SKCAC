@@ -21,6 +21,13 @@ body {
     background: lightgrey;
 }
 
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+}
+
 #main {
     max-width: 90%;
     margin-left: auto;
@@ -37,7 +44,7 @@ body {
     padding: 2%;
 }
 
-#infoTable {
+button, #infoTable {
     border: 1px solid lightgrey;
     border-radius: 10%;
 }
