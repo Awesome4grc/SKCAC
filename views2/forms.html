@@ -1,3 +1,10 @@
+<!--
+    Author: Awesome Four (Adolfo, Alec, Bo, Keith)
+    Date:   4/25/2019
+    File: header.html
+
+    Forms page.
+-->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -29,13 +36,13 @@
 				<h1>SKCAC Forms</h1>
 				<ul class="nav nav-tabs">
 					<li class="active">
-						<a data-toggle="tab" href="views2/home.html">Home</a>
+						<a data-toggle="tab" href="../views2/home.html">Home</a>
 					</li>
 					<li>
 						<a data-toggle="tab" href="#1st">Participant Info</a>
 					</li>
 					<li>
-						<a data-toggle="tab" href="#2nd" id="tab2">Notice of Rights</a>
+						<a data-toggle="tab" href="#2nd">Notice of Rights</a>
 					</li>
 					<li>
 						<a data-toggle="tab" href="#3rd">Release of Information</a>
@@ -184,8 +191,7 @@
 												</div>
 											</div>
 										</form>
-										<!-- end of Participant Information Form -->
-
+										<!-- end of the 1st form -->
 									</div>
 								</div>
 							</div>
@@ -207,7 +213,7 @@
 									<div class="panel-body">
 										
 										<!-- Provider Information Form -->
-										<form class="provider-form" novalidate>
+										<form class="provider-form" action="" method="post">
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<label>First Name</label>
@@ -215,7 +221,6 @@
 															id="providerFirst"
 															name="providerFirstName" placeholder=""
 															required>
-													<div class="invalid-feedback">Please enter their first name.</div>
 													<span class="glyphicon form-control-feedback"></span>
 												</div>
 												
@@ -225,7 +230,6 @@
 															id="providerLast"
 															name="providerLastName" placeholder=""
 															required>
-                                                    <div class="invalid-feedback">Please enter their last name.</div>
 												</div>
 											</div>
 											
@@ -235,7 +239,6 @@
 													<input type="email" class="form-control"
 															id="providerEmail" name="providerEmail"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their email.</div>
 												</div>
 												
 												<div class="form-group col-md-6">
@@ -244,7 +247,6 @@
 															id="providerPhone" name="providerPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
-                                                    <div class="invalid-feedback">Please enter their phone number.</div>
 												</div>
 											</div>
 											
@@ -255,7 +257,6 @@
 															id="providerAddress"
 															name="providerAddress"
 															placeholder="1234 Main St" required>
-                                                    <div class="invalid-feedback">Please enter their address.</div>
 												</div>
 											</div>
 											
@@ -275,7 +276,6 @@
 													<input type="text" class="form-control"
 															id="providerCity" name="providerCity"
 															required>
-                                                    <div class="invalid-feedback">Please enter their city.</div>
 												</div>
 												
 												<div class="form-group col-md-4">
@@ -283,7 +283,6 @@
 													<input type="text" class="form-control"
 															id="providerState" name="providerState"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their state.</div>
 												</div>
 												
 												<div class="form-group col-md-2">
@@ -291,19 +290,18 @@
 													<input type="text" class="form-control"
 															id="providerZip" name="providerZip"
 															required>
-                                                    <div class="invalid-feedback">Please enter their zip code.</div>
 												</div>
 											</div>
 											
 											<div class="form-row">
 												<div class="form-group col-md-12">
-													<button type="button" id="2" name="provider-form"
-															class="btn btn-acc btn-primary">Next
+													<button type="button" id="2"
+															class="btn-tab btn-primary">Next
 													</button>
 												</div>
 											</div>
 										</form>
-										<!-- end of Provider Information Form -->
+										<!-- end of the 2nd form -->
 									
 									</div>
 								</div>
@@ -326,14 +324,13 @@
 									<div class="panel-body">
 										
 										<!-- Legal Guardian Information Form -->
-										<form class="guardian-form" novalidate>
+										<form class="guardian-form" action="" method="post">
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<label>First Name</label>
 													<input type="text" class="form-control"
 															id="guardFirst" name="guardianFirstName"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their first name.</div>
 													<span class="glyphicon form-control-feedback"></span>
 												</div>
 												
@@ -342,7 +339,6 @@
 													<input type="text" class="form-control"
 															id="guardLast" name="guardianLastName"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their last name.</div>
 												</div>
 											</div>
 											
@@ -352,7 +348,6 @@
 													<input type="email" class="form-control"
 															id="guardEmail" name="guardianEmail"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their email.</div>
 												</div>
 												
 												<div class="form-group col-md-6">
@@ -361,7 +356,6 @@
 															id="guardPhone" name="GuardianPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
-                                                    <div class="invalid-feedback">Please enter their phone number.</div>
 												</div>
 											</div>
 											
@@ -371,7 +365,6 @@
 													<input type="text" class="form-control"
 															id="guardAddress" name="guardianAddress"
 															placeholder="1234 Main St" required>
-                                                    <div class="invalid-feedback">Please enter their address.</div>
 												</div>
 											</div>
 											
@@ -391,7 +384,6 @@
 													<input type="text" class="form-control"
 															id="guardCity" name="guardianCity"
 															required>
-                                                    <div class="invalid-feedback">Please enter their city.</div>
 												</div>
 												
 												<div class="form-group col-md-4">
@@ -399,7 +391,6 @@
 													<input type="text" class="form-control"
 															id="guardState" name="guardianState"
 															placeholder="state" required>
-                                                    <div class="invalid-feedback">Please enter their state.</div>
 												</div>
 												
 												<div class="form-group col-md-2">
@@ -407,21 +398,19 @@
 													<input type="text" class="form-control"
 															id="guardZip" name="guardianZip"
 															required>
-                                                    <div class="invalid-feedback">Please enter their zip code.</div>
 												</div>
 											</div>
 											
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<button type="button" id="3"
-															name="guardian-form"
+															name="provider-form"
 															class="btn btn-acc btn-primary">Next
 													</button>
 												</div>
 											</div>
 										</form>
-										<!-- end of Legal Guardian Information Form -->
-
+									
 									</div>
 								</div>
 							</div>
@@ -442,14 +431,13 @@
 									<div class="panel-body">
 										
 										<!-- NSA(Client Rep.) Form -->
-										<form class="rep-form" novalidate>
+										<form class="rep-form" action="" method="post">
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<label>First Name</label>
 													<input type="text" class="form-control"
 															id="nsaFirst" name="repFirstName"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their first name.</div>
 													<span class="glyphicon form-control-feedback"></span>
 												</div>
 												
@@ -458,7 +446,6 @@
 													<input type="text" class="form-control"
 															id="nsaLast" name="repLastName"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their last name.</div>
 												</div>
 											</div>
 											
@@ -468,7 +455,6 @@
 													<input type="email" class="form-control"
 															id="nsaEmail" name="repEmail"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their email.</div>
 												</div>
 												
 												<div class="form-group col-md-6">
@@ -477,21 +463,60 @@
 															id="nsaPhone" name="repPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
-                                                    <div class="invalid-feedback">Please enter their phone number.</div>
+												</div>
+											</div>
+											
+											<div class="form-row">
+												<div class="form-group col-md-12">
+													<label>Address</label>
+													<input type="text" class="form-control"
+															id="nsaAddress" name="repAddress"
+															placeholder="1234 Main St" required>
+												</div>
+											</div>
+											
+											<div class="form-row">
+												<div class="form-group col-md-12">
+													<label>Address 2</label>
+													<input type="text" class="form-control"
+															id="nsaAddress2" name="repAddress2"
+															placeholder="apartment, studio, or floor">
+												</div>
+											</div>
+											
+											<div class="form-row">
+												<div class="form-group col-md-6">
+													<label>City</label>
+													<input type="text" class="form-control"
+															id="nsaCity" name="repCity"
+															placeholder="" required>
+												</div>
+												
+												<div class="form-group col-md-4">
+													<label>State</label>
+													<input type="text" class="form-control"
+															id="nsaState" name="repState"
+															placeholder="" required>
+												</div>
+												
+												<div class="form-group col-md-2">
+													<label>Zip</label>
+													<input type="text" class="form-control"
+															id="nsaZip" name="repZip" placeholder=""
+															required>
 												</div>
 											</div>
 											
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<button type="button" id="4"
-															name="rep-form"
+															name="guardian-form"
 															class="btn btn-acc btn-primary">Next
 													</button>
 												</div>
 											</div>
 										</form>
-										<!-- end of NSA(Client Rep.) Form -->
-
+										<!-- end of NSA form -->
 									</div>
 								</div>
 							</div>
@@ -513,14 +538,13 @@
 									<div class="panel-body">
 										
 										<!-- Emergency Contact Form -->
-										<form class="emerg-form" novalidate>
+										<form class="emerg-form" action="" method="post" novalidate>
 											<div class="form-row">
 												<div class="form-group col-md-6">
 													<label>First Name</label>
 													<input type="text" class="form-control"
 															id="emergFirst" name="emergFirstName"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their first name.</div>
 													<span class="glyphicon form-control-feedback"></span>
 												</div>
 												
@@ -529,7 +553,6 @@
 													<input type="text" class="form-control"
 															id="emergLast" name="emergLastName"
 															placeholder="" required>
-                                                    <div class="invalid-feedback">Please enter their last name.</div>
 												</div>
 											</div>
 											
@@ -540,7 +563,6 @@
 															id="emergPhone" name="emergPhone"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999" required>
-                                                    <div class="invalid-feedback">Please enter their phone number.</div>
 												</div>
 												
 												<div class="form-group col-md-6">
@@ -549,19 +571,18 @@
 															id="emergAltPhone" name=emergPhone2"
 															pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 															placeholder="999-999-9999">
-                                                    <div class="invalid-feedback">Please enter their second number</div>
 												</div>
 											</div>
 											
 											<div class="form-row">
 												<div class="form-group col-md-12">
-													<button type="button" id="5" name="emerg-form"
+													<button type="button" id="5" name="rep-form"
 															class="btn btn-acc btn-primary">Next
 													</button>
 												</div>
 											</div>
 										</form>
-										<!-- end of Emergency Contact Form -->
+										<!-- end of emergency form -->
 									
 									</div>
 								</div>
@@ -582,7 +603,7 @@
 								<div id="collapse6" class="panel-collapse collapse"
 										aria-labelledby="heading6" data-parent="#accordion">
 									<div class="panel-body">
-										<form class="med-form" novalidate>
+										<form class="med-form" action="" method="post" novalidate>
 											<div class="form-row">
 												<div class="form-group col-md-4">
 													<label>Medication and Dosage (med-form)</label>
@@ -629,7 +650,7 @@
 											
 											<div class="form-row">
 												<div class="form-group col-md-12">
-													<button type="button" id="6" name="med-form"
+													<button type="button" id="6" name="emerg-form"
 															class="btn btn-acc btn-primary">Next
 													</button>
 												</div>
@@ -656,19 +677,19 @@
 								<div id="collapse7" class="panel-collapse collapse"
 										aria-labelledby="heading7" data-parent="#accordion">
 									<div class="panel-body">
-										<form class="alert-form" novalidate>
+										<form class="form" novalidate>
 											<div class="form-row">
 												<div class="form-group col-md-4">
 													<label>Medical Alerts</label>
 													<br>
-													<textarea id="medicalAlerts" rows="10" cols="40"
+													<textarea rows="10" cols="40"
 															placeholder="allergies, high blood pressure, diabetic, etc."></textarea>
 												</div>
 												
 												<div class="form-group col-md-4">
 													<label>Physical Limitations</label>
 													<br>
-													<textarea id="physicalLimitations" rows="10" cols="40"
+													<textarea rows="10" cols="40"
 															placeholder="bending, sitting, standing, etc."></textarea>
 												
 												</div>
@@ -676,14 +697,14 @@
 												<div class="form-group col-md-4">
 													<label>Diet Restrictions</label>
 													<br>
-													<textarea id="dietRestrictions" rows="10" cols="40"></textarea>
+													<textarea rows="10" cols="40"></textarea>
 												</div>
 												
 												<div class="form-row">
 													<div class="form-group col-md-12">
-														<a data-toggle="tab" href="#tab2"><button type="button" name="#rightsTab"
-																class="btn btn-acc btn-primary">Next</button></a>
-
+														<button type="button" name="#rightsTab"
+																class="btn btn-acc btn-primary">Next
+														</button>
 													</div>
 												</div>
 											</div>
@@ -700,7 +721,7 @@
 					<div id="2nd" class="tab-pane fade">
 						<h3></h3>
 						
-						<form class="rights">
+						<form action="" method="post">
 							<p>As a participant of services provided by SKCAC Industries and Employment Services, you have the right to:</p>
 							<p>- Respectful staff-to-participant interactions;</p>
 							<p>- Be treated with dignity and respect;</p>
@@ -739,7 +760,7 @@
 								</label>
 							</div>
 							
-							<a data-toggle="tab" href="#3rd"><button type="button" class="btn btn-acc btn-primary">Next</button></a>
+							<button type="submit" class="btn btn-acc btn-primary">Next</button>
 						</form>
 						<!-- end of form -->
 					</div>
@@ -773,8 +794,8 @@
 							<label class="font-weight-bold">Funding Agency</label>
 							<br>
 							<select name="agency" id="funding" class="form-control">
-								<option value="dds">King County, Developmental Disabilities Section</option>
-								<option value="fundingDVR">Division of Vocational Rehabilitation (DVR)</option>
+								<option>King County, Developmental Disabilities Section</option>
+								<option>Division of Vocational Rehabilitation (DVR)</option>
 							</select>
 							<br>
 							<label class="font-weight-bold">Employer/Volunteer site</label>
@@ -807,7 +828,7 @@
 								</label>
 							</div>
 							
-							<a data-toggle="tab" href="#4th"><button type="button" class="btn btn-acc btn-primary">Next</button></a>
+							<button type="submit" class="btn btn-acc btn-primary">Next</button>
 						</form>
 					</div>
 					<!-- end of 3rd tab pane -->
@@ -828,7 +849,7 @@
 						
 						<div class="checkbox">
 							<label>
-								<input type="checkbox" name="remember" required>
+								<input type="checkbox" name="remember">
 								Program Participant Acknowledgement
 							</label>
 						</div>
@@ -840,38 +861,41 @@
 							</label>
 						</div>
 						
-						<a data-toggle="tab" href="#5th"><button type="button" class="btn btn-primary" name="">Next</button></a>
-
+						<button type="submit" class="btn btn-acc btn-primary">Next</button>
 					</div>
 					<!-- end of 4th tab pane -->
 					
 					<div id="5th" class="tab-pane fade">
 						<h3></h3>
-
-                        <h2>Appeal/Grievance Procedure</h2>
-                        <p>
-                        Please know that you may have an advocate to support and/or to represent you at any step of this
-                            process and you are protected from any and all retaliation or reprisal based on your concerns.
-                        <br>
-                        From time to time you or your parent/guardian may disagree with a decision made by staff of SKCAC. When this happens, we want to make sure all conflicts are fully negotiated. If a conflict arises, which cannot be resolved through regular lines of communication, please observe the following procedure:
-                        <br>
-                        1. Attempt to work out the conflict with the immediate person in charge, your Employment Specialist or Supervisor. Try to work out the conflict and if the conflict cannot be resolved move on to the next step.
-
-                        From this point forward in the process, each step will be documented in writing.
-                        <br>
-                        2. Ask for a meeting with the Program Services representative and explain the situation to them. They may ask you to put the disagreement in writing and the Executive Director will make a decision on the conflict within five working days.
-                        <br>
-                        3. If you are not satisfied with the decision, please make an appointment, or contact the Executive Director of SKCAC and explain the situation to them. They may also ask you to put the conflict in writing. The Executive Director will make a decision regarding the conflict within five working days. If you are still not satisfied with the decision of the Executive Director, and then he/she will refer you to a representative of the Board of Directors, who will review your complaint or conflict, make a decision in writing and give you a copy within five working days after the next scheduled Board of Directors meeting.
-                        <br>
-                        4. If you still are not satisfied with the decision, then you will be referred to a person or organization not affiliated with SKCAC, who will proceed as a mediator. Their job is to listen to you, your parent/guardian, and/or your advocate and SKCAC and to reach a final decision concerning your conflict.
-                        <br>
-                        The mediator may be a staff member of the ARC, a professional mediator or organization, or someone you and SKCAC both agree on. If the person is a professional mediator and charges for the service, the parties will divide the cost evenly, unless other arrangements have been made. The mediator will set the guidelines for the process and keep all parties informed of the process, according to the established guidelines. Mediation is voluntary and not legally binding.
-
-                        Any grievance action will not result in retaliation or barriers to services to you or anyone involved in the grievance process
-                        </p>
-                        <div class="checkbox">
+						<p></p>
+						
+						<p>As a participant of services provided by SKCAC Industries and Employment Services, you have the right to:</p>
+						<p>- Respectful staff-to-participant interactions;</p>
+						<p>- Be treated with dignity and respect;</p>
+						<p>- Be free from any kind of abuse or punishment including neglect, financial exploitation, abandonment, humiliation, retaliation, verbal, mental, physical and/or sexual abuse;</p>
+						<p>- Be free from discrimination and harassment on the basis of race, color, national origin, gender, age, religion, creed, marital status, disability, sexual orientation, or the presence of any physical, mental or sensory disability;</p>
+						<p>- Be compensated for work at prevailing wages and commensurate with abilities;</p>
+						<p>- Be free from invasion of privacy;</p>
+						<p>- Have information about you treated confidentially;</p>
+						<p>- Actively participate in the development/modification of your service program;</p>
+						<p>- Select your own vocational goals and have final approval on all plans SKCAC helps you with or makes for you;</p>
+						<p>- Be provided services in your best interest and related to your needs;</p>
+						<p>- Review your service records, have access to and release of your personal records, as requested;</p>
+						<p>- Be fully informed regarding fees to be charged and methods for payment;</p>
+						<p>- Be provided with rules and regulation governing conduct and responsibilities of SKCAC participants and employees;</p>
+						<p>- Register complaints and recommendations without interference, reprisal or retaliation;</p>
+						<p>- An appeal/grievance process if you disagree with a SKCAC decision and that the action will not result in retaliation or barriers to services;</p>
+						<p>- Involve others in the planning process (spouse, parents, guardian, advocates, etc.);</p>
+						<p>- Informed consent about service delivery, release of information, composition of service delivery team, and involvement in research projects;</p>
+						<p>- Informed right of refusal, when consent is required, with explanation of risks and adverse consequences of the refusal;</p>
+						<p>- Access to self help and advocacy services;</p>
+						<p>- Access or referral to legal entities for appropriate representation, if needed;</p>
+						<p>- Investigation and resolution of alleged infringement of rights.</p>
+						<p>- This information has been reviewed with me and I understand my rights as a participant of services provided by SKCAC Industries and Employment Services</p>
+						
+						<div class="checkbox">
 							<label>
-								<input type="checkbox" required>
+								<input type="checkbox">
 								Program Participant Acknowledgement
 							</label>
 						</div>
@@ -883,14 +907,14 @@
 							</label>
 						</div>
 						
-						<a data-toggle="tab" href="#6th"><button type="button" class="btn btn-primary" href="#6th">Next</button></a>
+						<button type="submit" class="btn btn-acc btn-primary">Next</button>
 					</div>
 					
 					<div id="6th" class="tab-pane fade">
 						<h3></h3>
 						<p></p>
 						
-						<form class="ssi-form">
+						<form>
 							<h3 class="mt-2"> Title II/Medicare and SSI/Medicaid</h3>
 							<p>I hereby acknowledge that I have received information to find Title II Benefits: SSDI (Disability Insurance),
 								CDB (Childhood Disability Benefits) and Medicare 2018 and Supplemental Security Income and Medicaid 2018
@@ -900,17 +924,15 @@
 							</p>
 							
 							<label>SSDI Amount
-								<input type="text" id="amount1" required>
-                                <div class="invalid-feedback">Please enter an amount.</div>
+								<input type="text" id="amount1">
 							</label>
 							
 							<label> SSI Amount
-								<input type="text" id="amount2" required>
-                                <div class="invalid-feedback">Please enter an amount.</div>
+								<input type="text" id="amount2">
 							</label>
 							<br>
 							
-							<!--<button type="submit" class="btn btn-acc btn-primary">Submit</button>-->
+							<button type="submit" class="btn btn-acc btn-primary">Submit</button>
 						</form>
 					</div>
 				</div>
