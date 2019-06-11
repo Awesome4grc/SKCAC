@@ -68,9 +68,9 @@ $f3->route('GET /admin', function($f3) {
     echo $view->render('views2/admin.html');
 });
 
-$f3->route('GET|POST /newForms', function() {
+$f3->route('GET|POST /forms', function() {
     $view = new Template();
-    echo $view->render('views2/forms.html');
+    echo $view->render('views2/home.html');
 });
 
 $f3->route('GET|POST /oldForms', function() {
