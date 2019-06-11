@@ -54,7 +54,7 @@ else{
 //define a default route
 $f3->route('GET /', function() {
     $view = new Template();
-    echo $view->render('views2/home.html');
+    echo $view->render('views2/forms_and_admin.html');
 });
 
 $f3->route('GET /admin', function($f3) {
@@ -68,12 +68,12 @@ $f3->route('GET /admin', function($f3) {
     echo $view->render('views2/admin.html');
 });
 
-$f3->route('GET|POST /forms', function() {
+$f3->route('GET|POST /newForms', function() {
     $view = new Template();
-    echo $view->render('views2/home.html');
+    echo $view->render('views2/forms.html');
 });
 
-$f3->route('GET|POST /forms', function() {
+$f3->route('GET|POST /oldForms', function() {
     $view = new Template();
     echo $view->render('views/forms.html');
 });
@@ -82,7 +82,7 @@ $f3->route('GET|POST /forms', function() {
 $f3->route('GET|POST /forms', function($f3) {
     // if the form has been submitted (via POST), validates it
     if (!empty($_POST)) {
-        // gets all the data from the personal info form
+        // gets all the data from the participant info form
         $pFName = $_POST['participantFirstName'];
         $pLName = $_POST['participantLastName'];
         $pEmail = $_POST['participantEmail'];
@@ -104,7 +104,7 @@ $f3->route('GET|POST /forms', function($f3) {
         $f3->set('pState', $pState);
         $f3->set('pZip', $pZip);
 
-        if (validateParticipantInformationForm()) {
+        if (validateParticipantInfoForm()) {
             // stores data in session
             $_SESSION['pFName'] = $pFName; // required
             $_SESSION['pLName'] = $pLName; // required
@@ -144,12 +144,20 @@ $f3->route('GET|POST /forms', function($f3) {
 
 
             // reroute if all data are valid
-            $f3->reroute('/thank_you');
+            $f3->reroute('/confirmation');
         }
     }
 
     $view = new Template();
     echo $view->render('views2/forms.html');
+});
+
+// defines a route for the confirmation page
+$f3->route('GET|POST /confirmation', function($f3) {
+
+
+    $view = new Template();
+    echo $view->render('views2/confirmation.html');
 });
 
 $f3->route('GET /thank_you', function() {

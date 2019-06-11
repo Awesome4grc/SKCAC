@@ -23,8 +23,7 @@
     ],
   "require": {
     "bcosca/fatfree-core": "dev-master",
-    "ext-pdo": "*",
-    "ext-ctype": "*"
+    "ext-pdo": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "^6"
