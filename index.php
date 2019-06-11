@@ -13,8 +13,7 @@ error_reporting(E_ALL);
 
 //require autoload
 require_once('vendor/autoload.php');
-include('model/db-functions.php');
-include('model/db-validate.php');
+//require_once ('model/db-functions.php');
 
 //create an instance of the BASE CLASS
 $f3 = Base::instance();
@@ -55,7 +54,7 @@ else{
 //define a default route
 $f3->route('GET /', function() {
     $view = new Template();
-    echo $view->render('views2/forms_and_admin.html');
+    echo $view->render('views2/home.html');
 });
 
 $f3->route('GET /admin', function($f3) {
@@ -104,7 +103,6 @@ $f3->route('GET|POST /forms', function($f3) {
         $f3->set('pCity', $pCity);
         $f3->set('pState', $pState);
         $f3->set('pZip', $pZip);
-
 
         if (validateParticipantInformationForm()) {
             // stores data in session
