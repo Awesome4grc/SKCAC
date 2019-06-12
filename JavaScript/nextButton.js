@@ -58,7 +58,6 @@ $('.btn-conf').on('click', function(){
         timeValues[i] = timeArray[i].value;
     }
     console.log(medValues);
-    valid = false;
     $.post('model/medicalArrays.php', {meds : medValues, freqs : freqValues, times: timeValues});
     if(valid === true){
         window.location.href="confirmation";
