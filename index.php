@@ -18,7 +18,7 @@ $db = new Database();
 $f3->route('GET /', function() {
     $_SESSION = array();
     $view = new Template();
-    echo $view->render('views2/home.html');
+    echo $view->render('views2/landing.html');
 });
 $f3->route('GET /admin', function($f3) {
     global $db;
