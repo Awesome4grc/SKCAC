@@ -100,35 +100,34 @@
 			<div class="flex-md-row">
 				<hr>
 				<h4>Medications, Restrictions and Limitations</h4>
-				<div class="flex-md-row">
-					<div class="flex-md-row">
-						<div class="col-md-4">
-							<p>Medication and Dosage: {{@SESSION.med}}</p>
-						</div>
-						<div class="col-md-4">
-							<p>Frequency Taken: {{@SESSION.frequency}}</p>
-						</div>
-						<div class="col-md-4">
-							<p>Time Taken: {{@SESSION.time}}</p>
-						</div>
+				<div class="row">
+					<div class="col-4">
+						<p>Medication and Dosage: {{@SESSION.med}}</p>
+					</div>
+					<div class="col-4">
+						<p>Frequency Taken: {{@SESSION.frequency}}</p>
+					</div>
+					<div class="col-4">
+						<p>Time Taken: {{@SESSION.time}}</p>
 					</div>
 				</div>
-				<div class="flex-md-row">
-					<p>
-						Medical Alerts: {{@SESSION.alerts}}
-					</p>
-				</div>
-				<div class="flex-md-row">
-					<p>
-						Physical Limitations: {{@SESSION.limitations}}
-					</p>
-				</div>
-				<div class="flex-md-row">
-					<p>
-						Diet Restrictions: {{@SESSION.diet}}
-					</p>
-				</div>
 			</div>
+			<div class="flex-md-row">
+				<p>
+					Medical Alerts: {{@SESSION.alerts}}
+				</p>
+			</div>
+			<div class="flex-md-row">
+				<p>
+					Physical Limitations: {{@SESSION.limitations}}
+				</p>
+			</div>
+			<div class="flex-md-row">
+				<p>
+					Diet Restrictions: {{@SESSION.diet}}
+				</p>
+			</div>
+			
 			<!-- Title II and SSI amounts -->
 			<div class="flex-md-row">
 				<hr>
@@ -161,25 +160,44 @@
 				<hr>
 				<h4>Form Checklist</h4>
 				<br />
-				<span class="glyphicon glyphicon-ok">&#9;2019 IE Resource Letter</span>
-				<br />
-				<span class="glyphicon glyphicon-ok">&#9;Grievance Procedures</span>
-				<br />
-				<span class="glyphicon glyphicon-ok">&#9;Handbook Assessment and Placement</span>
-				<br />
-				<span class="glyphicon glyphicon-ok">&#9;Medical and Emergency Information</span>
-				<br />
-				<span class="glyphicon glyphicon-ok">&#9;Notice of Rights</span>
-				<br />
-				<span class="glyphicon glyphicon-ok">&#9;Photo Release</span>
-				<br />
-				<span class="glyphicon glyphicon-ok">&#9;Release DDA</span>
-				<br />
-				<span class="glyphicon glyphicon-ok">&#9;Release DVR</span>
-				<br />
-				<span class="glyphicon glyphicon-ok">&#9;Title II and SSI Statement of
+				<p>
+					<span class="glyphicon glyphicon-ok"></span>&#9;2019 IE Resource Letter
+					<br />
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-ok"></span>&#9;Grievance Procedures
+					<br />
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-ok"></span>&#9;Handbook Assessment and
+					Placement
+					<br />
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-ok"></span>&#9;Medical and Emergency
+					Information
+					<br />
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-ok"></span>&#9;Notice of Rights
+					<br />
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-ok"></span>&#9;Photo Release
+					<br />
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-ok"></span>&#9;Release DDA
+					<br />
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-ok"></span>&#9;Release DVR
+					<br />
+				</p>
+				<p>
+					<span class="glyphicon glyphicon-ok"></span>&#9;Title II and SSI Statement of
 					Acknowledgement
-				</span>
+				</p>
 			</div>
 			<div class="flex-md-row">
 				<hr>
@@ -190,14 +208,16 @@
 					and correct information.
 				</p>
 			</div>
-			<!-- Final submit button after confirming that info is correct. -->
-			<div class="flex-md-row">
-				<hr>
-				<a href="thank_you"><
-					<button type="button" class="btn-success btn-lg p-3">Submit
-					</button>
-				</a>
-			</div>
 		</div>
+		<!-- Final submit button after confirming that info is correct. -->
+		<div class="flex-md-row">
+			<hr>
+			<button type="button" class="btn-success btn-lg p-3" href="thank_you">
+				<a href="thank_you" alt="submit button">
+					Submit
+				</a>
+			</button>
+		</div>
+	
 	</body>
 </html>
