@@ -51,6 +51,28 @@ function getClients(){
 
 }
 
+//function to check if participant is already added
+function containsParticipant($fname,$lname) {
+    //database object
+    global $dbh;
+
+    $sql = "SELECT * FROM participant WHERE first_name = :first_name AND last_name = :last_name";
+
+    //prepare the statement
+    $statement = $dbh->prepare($sql);
+
+    //bind parameters
+    $statement->bindParam(':first_name',$fname, PDO::PARAM_STR);
+    $statement->bindParam(':last_name',$lname, PDO::PARAM_STR);
+
+    //execute statement
+    $statement->execute();
+
+    //count the many of rows
+    $count = $statement->rowCount();
+    return $count > 0;
+}
+
 function addParticipant($fname,$lname,$address,$city,$state,$zip,$phone,$email,$rep = 1,$address2 = " "){
     //database object
     global $dbh;
@@ -107,6 +129,30 @@ function updateParticipant($participant_id,$address,$city,$state,$zip,$phone,$em
     return $success;
 }
 
+//function to check if participant is already added
+function containsEmergContact($participantID,$fname,$lname) {
+    //database object
+    global $dbh;
+
+    $sql = "SELECT * FROM emergency_contact WHERE participant_id = :participant_id AND first_name = :first_name 
+            AND last_name = :last_name";
+
+    //prepare the statement
+    $statement = $dbh->prepare($sql);
+
+    //bind parameters
+    $statement->bindParam(':participant_id',$participantID, PDO::PARAM_INT);
+    $statement->bindParam(':first_name',$fname, PDO::PARAM_STR);
+    $statement->bindParam(':last_name',$lname, PDO::PARAM_STR);
+
+    //execute statement
+    $statement->execute();
+
+    //count the many of rows
+    $count = $statement->rowCount();
+    return $count > 0;
+}
+
 function addEmergencyContact($participant_id,$fname,$lname,$phone,$phone2 = " "){
     //database object
     global $dbh;
@@ -148,6 +194,30 @@ function updateEmergencyContact($participant_id,$fname,$lname,$phone,$phone2 = "
     // Execute the statement
     $success = $statement->execute();
     return $success;
+}
+
+//function to check if participant is already added
+function containsGuardian($participantID,$fname,$lname) {
+    //database object
+    global $dbh;
+
+    $sql = "SELECT * FROM guardian WHERE participant_id = :participant_id AND first_name = :first_name 
+            AND last_name = :last_name";
+
+    //prepare the statement
+    $statement = $dbh->prepare($sql);
+
+    //bind parameters
+    $statement->bindParam(':participant_id',$participantID, PDO::PARAM_INT);
+    $statement->bindParam(':first_name',$fname, PDO::PARAM_STR);
+    $statement->bindParam(':last_name',$lname, PDO::PARAM_STR);
+
+    //execute statement
+    $statement->execute();
+
+    //count the many of rows
+    $count = $statement->rowCount();
+    return $count > 0;
 }
 
 function addGuardian($participant_id,$fname,$lname,$address,$city,$state,$zip,$phone,$email,$address2 = " "){
@@ -257,6 +327,7 @@ function containsMedication($participant_id,$medication) {
     $count = $statement->rowCount();
     return $count > 0;
 }
+
 //function to update the frequency a medication is taken
 function updateMedFrequency($participant_id,$medication,$newFrequency) {
     //database object
@@ -301,6 +372,27 @@ function updateMedTimeTaken($participant_id,$medication,$newTime) {
 
     //return true if successful false if not
     return $success;
+}
+
+//function to check if med alerts are already added
+function containsMedAlerts($participantID) {
+    //database object
+    global $dbh;
+
+    $sql = "SELECT * FROM other WHERE participant_id = :participant_id";
+
+    //prepare the statement
+    $statement = $dbh->prepare($sql);
+
+    //bind parameters
+    $statement->bindParam(':participant_id',$participantID, PDO::PARAM_INT);
+
+    //execute statement
+    $statement->execute();
+
+    //count the many of rows
+    $count = $statement->rowCount();
+    return $count > 0;
 }
 
 function addAlertsLimitsDiet($participant_id,$alerts = "",$limits = "",$diet = ""){
@@ -385,21 +477,46 @@ function updateDietRestrictions($participant_id,$diet) {
     return $success;
 }
 
-function addProvider($participant_id,$provider,$address,$city,$state,$zip,$phone,$email,$address2 = " "){
+//function to check if provider is already added
+function containsProvider($participantID,$fname,$lname) {
+    //database object
+    global $dbh;
+
+    $sql = "SELECT * FROM provider WHERE participant_id = :participant_id AND provider_first = :first_name 
+            AND provider_last = :last_name";
+
+    //prepare the statement
+    $statement = $dbh->prepare($sql);
+
+    //bind parameters
+    $statement->bindParam(':participant_id',$participantID, PDO::PARAM_INT);
+    $statement->bindParam(':first_name',$fname, PDO::PARAM_STR);
+    $statement->bindParam(':last_name',$lname, PDO::PARAM_STR);
+
+    //execute statement
+    $statement->execute();
+
+    //count the many of rows
+    $count = $statement->rowCount();
+    return $count > 0;
+}
+
+function addProvider($participant_id,$fname,$lname,$address,$city,$state,$zip,$phone,$email,$address2 = " "){
     //database object
     global $dbh;
 
     //set the insert sql statement for participant not in the database
-    $sql = "INSERT INTO provider (participant_id, provider_name, address_one, address_two, city, state,
-            zip, phone, email) VALUES (:participant_id,:provider_name, :address, :address2, :city, :state, :zip, 
-            :phone, :email)";
+    $sql = "INSERT INTO provider (participant_id, provider_first,provider_last, address_one, address_two, city, state,
+            zip, phone, email) VALUES (:participant_id,:provider_first,:provider_last, :address, :address2, :city,
+            :state, :zip,:phone, :email)";
 
     //prepare the statement
     $statement = $dbh->prepare($sql);
 
     //bind the parameters
     $statement->bindParam(':participant_id',$participant_id, PDO::PARAM_INT);
-    $statement->bindParam(':provider_name',$provider, PDO::PARAM_STR);
+    $statement->bindParam(':provider_first',$fname, PDO::PARAM_STR);
+    $statement->bindParam(':provider_last',$lname, PDO::PARAM_STR);
     $statement->bindParam(':address',$address, PDO::PARAM_STR);
     $statement->bindParam(':city',$city, PDO::PARAM_STR);
     $statement->bindParam(':state',$state, PDO::PARAM_STR);
@@ -414,21 +531,22 @@ function addProvider($participant_id,$provider,$address,$city,$state,$zip,$phone
     //return true if successful or false if not
     return $success;
 }
-function updateProvider($participant_id,$provider,$address,$city,$state,$zip,$phone,$email,$address2 = " "){
+function updateProvider($participant_id,$fname,$lname,$address,$city,$state,$zip,$phone,$email,$address2 = " "){
     //database object
     global $dbh;
 
     //set the update sql query
-    $sql = "UPDATE provider SET provider_name = :provider_name, address_one = :address, 
-            address_two = :address2, city = :city, state = :state, zip = :zip, phone = :phone, email = :email
-            WHERE participant_id = :participant_id";
+    $sql = "UPDATE provider SET provider_first = :provider_first,provider_last = ;providier_last, 
+            address_one = :address,address_two = :address2, city = :city, state = :state, zip = :zip, 
+            phone = :phone, email = :email WHERE participant_id = :participant_id";
 
     //prepare the statement
     $statement = $dbh->prepare($sql);
 
     //bind the parameters
     $statement->bindParam(':participant_id',$participant_id, PDO::PARAM_INT);
-    $statement->bindParam(':provider_name',$provider, PDO::PARAM_STR);
+    $statement->bindParam(':provider_first',$fname, PDO::PARAM_STR);
+    $statement->bindParam(':provider_last',$lname, PDO::PARAM_STR);
     $statement->bindParam(':address',$address, PDO::PARAM_STR);
     $statement->bindParam(':city',$city, PDO::PARAM_STR);
     $statement->bindParam(':state',$state, PDO::PARAM_STR);
