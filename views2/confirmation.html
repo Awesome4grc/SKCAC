@@ -5,16 +5,15 @@
         <title>Forms</title>
         <link href="css/styles.css" rel="stylesheet">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
         <!-- Bootstrap -->
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="/vendors/formvalidation/dist/js/FormValidation.min.js"></script>
         <script src="/vendors/formvalidation/dist/js/plugins/Bootstrap.min.js"></script>
@@ -23,13 +22,41 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Please Confirm Your Info Below</h1>
+        <h2>Please Confirm your information</h2>
 
+        <h3>Participant Information</h3>
+        <p>
+            Name: {{@SESSION.clientFirst}} {{@SESSION.clientLast}}
+            <br>
+            Email and Phone: {{@SESSION.clientEmail}}, {{@SESSION.clientPhone}}
+            <br>
+            Address: {{@SESSION.clientAddress}}, {{@SESSION.clientCity}} {{@SESSION.clientState}} {{@SESSION.clientZip}}
+        </p>
 
-            </div>
-        </div>
+        <h3>Provider Information</h3>
+        Name: {{@SESSION.providerFirst}} {{@SESSION.providerLast}}
+        <br>
+        Email and Phone: {{@SESSION.providerEmail}} {{@SESSION.providerPhone}}
+        <br>
+        Address: {{@SESSION.providerAddress}} {{@SESSION.providerCity}}
+                 {{@SESSION.providerState}} {{@SESSION.providerZip}}
 
+        <h3>Guardian Information</h3>
+        Name: {{@SESSION.guardFirst}} {{@SESSION.guardLast}}
+        <br>
+        Email and Phone: {{@SESSION.guardEmail}} {{@SESSION.guardPhone}}
+        <br>
+        Address:{{@SESSION.guardAddress}} {{@SESSION.guardCity}}
+                {{@SESSION.guardState}} {{@SESSION.guardZip}}
+
+        <h3>NSA Information</h3>
+        Name: {{@SESSION.nsaFirst}} {{@SESSION.nsaLast}}
+        <br>
+        Email and Phone: {{@SESSION.nsaEmail}} {{@SESSION.nsaPhone}}
+
+        <h3>Emergency Contact</h3>
+        Name: {{@SESSION.emergFirst}}{{@SESSION.emergLast}}
+        <br>
+        Email and Phone: {{@SESSION.emergPhone}}{{@SESSION.emergAltPhone}}
     </body>
 </html>
