@@ -2,15 +2,14 @@
     Author: Awesome Four (Adolfo, Alec, Bo, Keith)
     Date:   4/25/2019
     File: confirmation.html
-
-    Participant confirmation  page.
--->
+    
+    Confirmation  page.
+    -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<title>Confirmation</title>
-		
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<!-- Bootstrap -->
 		<!-- Latest compiled and minified CSS -->
@@ -27,6 +26,7 @@
 		<script src="/vendors/formvalidation/dist/js/plugins/Bootstrap.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 		<script src="http://code.jquery.com/jquery.js"></script>
+		<!-- Custom css styles -->
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 	<body>
@@ -34,6 +34,7 @@
 		<div class="container" id="main">
 			<h2>Please Confirm your information</h2>
 			<hr>
+			<!-- Participant Name and Contact Info -->
 			<div class="flex-md-row">
 				<h4>Participant Information</h4>
 				<br />
@@ -45,6 +46,7 @@
 					Address: {{@SESSION.clientAddress}}, {{@SESSION.clientCity}} {{@SESSION.clientState}} {{@SESSION.clientZip}}
 				</p>
 			</div>
+			<!-- Provider name and contact info. -->
 			<div class="flex-md-row">
 				<hr>
 				<h4>Provider Information</h4>
@@ -58,6 +60,7 @@
 					{{@SESSION.providerState}} {{@SESSION.providerZip}}
 				</p>
 			</div>
+			<!-- Legal Guardian name and contact info. -->
 			<div class="flex-md-row">
 				<hr>
 				<h4>Guardian Information</h4>
@@ -71,6 +74,7 @@
 					{{@SESSION.guardState}} {{@SESSION.guardZip}}
 				</p>
 			</div>
+			<!-- NSA info -->
 			<div class="flex-md-row">
 				<hr>
 				<h4>NSA Information</h4>
@@ -81,6 +85,7 @@
 					Email and Phone: {{@SESSION.nsaEmail}} {{@SESSION.nsaPhone}}
 				</p>
 			</div>
+			<!-- Emergency contacts and their contact info. -->
 			<div class="flex-md-row">
 				<hr>
 				<h4>Emergency Contact</h4>
@@ -91,52 +96,96 @@
 					Email and Phone: {{@SESSION.emergPhone}}{{@SESSION.emergAltPhone}}
 				</p>
 			</div>
+			<!-- Medications and Restrictions -->
+			<div class="flex-md-row">
+				<hr>
+				<h4>Medications</h4>
+				<div class="col-md-4">
+					<p>Medication and Dosage:</p>
+				</div>
+				<div class="col-md-4">
+					<p>Frequency Taken:</p>
+				</div>
+				<div class="col-md-4">
+					<p>Time Taken:</p>
+				</div>
+			
+			</div>
+			<div class="flex-md-row">
+				<hr>
+				<h4>Medical Alerts</h4>
+				<br />
+				<p>
+					{{@SESSION.alerts}}
+				</p>
+			</div>
+			<div class="flex-md-row">
+				<hr>
+				<h4>Physical Limitations</h4>
+				<br />
+				<p>
+					{{@SESSION.limitations}}
+				</p>
+			</div>
+			<div class="flex-md-row">
+				<hr>
+				<h4>Diet Restrictions</h4>
+				<br />
+				<p>
+					{{@SESSION.diet}}
+				</p>
+			</div>
+			<!-- Title II and SSI amounts -->
 			<div class="flex-md-row">
 				<hr>
 				<h4>Title II and SSI Statement</h4>
 				<br />
 				<p>
-					SSID Amount
-					<span class="glyphicon glyphicon-usd"></span>
-					{{@SESSION.ssidAmount}}
+					SSID Amount: &#36;{{@SESSION.ssidAmount}}
 					<br />
-					SSI Amount
-					<span class="glyphicon glyphicon-usd"></span>
-					{{@SESSION.ssiAmount}}
+					SSI Amount: &#36;{{@SESSION.ssiAmount}}
 				</p>
 			</div>
+			<!-- Release of information. -->
+			<div class="flex-md-row">
+				<hr>
+				<h4>Release of Information</h4>
+				<br />
+				<p>
+					Referring Agency: {{@SESSION.referring}}
+					<br />
+					Funding Agency: {{@SESSION.funding}}
+					<br />
+					Employer: {{@SESSION.employer}}
+					<br />
+					Other: {{@SESSION.other}}
+					<br />
+				</p>
+			</div>
+			<!-- Forms Checklist -->
 			<div class="flex-md-row">
 				<hr>
 				<h4>Form Checklist</h4>
 				<br />
-				<p>
-					<span class="glyphicon glyphicon-ok"></span>
-					2019 IE Resource Letter
-					<br />
-					<span class="glyphicon glyphicon-ok"></span>
-					Grievance Procedures
-					<br />
-					<span class="glyphicon glyphicon-ok"></span>
-					Handbook Assessment and Placement
-					<br />
-					<span class="glyphicon glyphicon-ok"></span>
-					Medical and Emergency Information
-					<br />
-					<span class="glyphicon glyphicon-ok"></span>
-					Notice of Rights
-					<br />
-					<span class="glyphicon glyphicon-ok"></span>
-					Photo Release
-					<br />
-					<span class="glyphicon glyphicon-ok"></span>
-					Release DDA
-					<br />
-					<span class="glyphicon glyphicon-ok"></span>
-					Release DVR
-					<br />
-					<span class="glyphicon glyphicon-ok"></span>
-					Title II and SSI Statement of Acknowledgement
-				</p>
+				<span class="glyphicon glyphicon-ok">&#9;2019 IE Resource Letter</span>
+				<br />
+				<span class="glyphicon glyphicon-ok">&#9;Grievance Procedures</span>
+				<br />
+				<span class="glyphicon glyphicon-ok">&#9;Handbook Assessment and Placement</span>
+				<br />
+				<span class="glyphicon glyphicon-ok">&#9;Medical and Emergency Information</span>
+				<br />
+				<span class="glyphicon glyphicon-ok">&#9;Notice of Rights</span>
+				<br />
+				<span class="glyphicon glyphicon-ok">&#9;Photo Release</span>
+				<br />
+				<span class="glyphicon glyphicon-ok">&#9;Release DDA</span>
+				<br />
+				<span class="glyphicon glyphicon-ok">&#9;Release DVR</span>
+				<br />
+				<span class="glyphicon glyphicon-ok">&#9;Title II and SSI Statement of
+					Acknowledgement
+				</span>
 			</div>
 			<div class="flex-md-row">
 				<hr>
@@ -146,8 +195,8 @@
 					above, and acknowledge that you have provided us with all the most current
 					and correct information.
 				</p>
-			
 			</div>
+			<!-- Final submit button after confirming that info is correct. -->
 			<div class="flex-md-row">
 				<hr>
 				<button class="btn-success btn-lg p-3">Submit</button>
