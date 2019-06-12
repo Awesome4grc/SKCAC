@@ -44,7 +44,7 @@ div.sticky {
     padding: 2%;
 }
 
-button, #infoTable {
+#infoTable {
     border: 1px solid lightgrey;
     border-radius: 10%;
 }
