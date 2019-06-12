@@ -102,12 +102,21 @@
 				<h4>Medications</h4>
 				<div class="col-md-4">
 					<p>Medication and Dosage:</p>
+					<repeat group="{{@SESSION.medications}}" value="{{@med}}">
+						<p>{{@med}}</p>
+					</repeat>
 				</div>
 				<div class="col-md-4">
 					<p>Frequency Taken:</p>
+					<repeat group="{{@SESSION.frequencies}}" value="{{@freq}}">
+						<p>{{@freq}}</p>
+					</repeat>
 				</div>
 				<div class="col-md-4">
 					<p>Time Taken:</p>
+					<repeat group="{{@SESSION.times}}" value="{{@time}}">
+						<p>{{@time}}</p>
+					</repeat>
 				</div>
 			
 			</div>
