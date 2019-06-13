@@ -39,14 +39,16 @@ $f3->route('GET|POST /forms', function() {
 $f3->route('GET|POST /confirmation', function($f3) {
 
 
-    include ('model/db-validate.php');
+
 
     // do something here...
     if(!empty($_SESSION)){
 
-        if(validateForms($_SESSION)){
 
-            include ('model/db-functions.php');
+        
+
+            require ('model/db-validate.php');
+            require ('model/db-functions.php');
 
 
 
@@ -63,6 +65,7 @@ $f3->route('GET|POST /confirmation', function($f3) {
                     $_SESSION['clientCity'], $_SESSION['clientState'],$_SESSION['clientZip'],$_SESSION['clientPhone'],
                     $_SESSION['clientEmail'],1,
                     (isset($_SESSION['clientAddress2']) ? $_SESSION['clientAddress2'] : ""));
+
 
             }
 
@@ -146,7 +149,7 @@ $f3->route('GET|POST /confirmation', function($f3) {
                 }
             }
 
-        }
+
     }
 
     /* EMAIL NOTIFICATION in progress by Bo, do not delete */

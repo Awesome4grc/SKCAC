@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 require_once ('/home2/awesomeg/config.php');
 
@@ -31,7 +31,7 @@ function connect(){
  */
 function getClients(){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     //set the select sql query to select all clients
     $sql = "SELECT username,users.name AS name,xp FROM users 
@@ -54,7 +54,8 @@ function getClients(){
 //function to check if participant is already added
 function containsParticipant($fname,$lname) {
     //database object
-    global $dbh;
+    $dbh = connect();
+
 
     $sql = "SELECT * FROM participant WHERE first_name = :first_name AND last_name = :last_name";
 
@@ -75,7 +76,9 @@ function containsParticipant($fname,$lname) {
 
 function addParticipant($fname,$lname,$address,$city,$state,$zip,$phone,$email,$rep = 1,$address2 = " "){
     //database object
-    global $dbh;
+    $dbh = connect();
+    
+
 
     //set the insert sql statement for participant not in the database
     $sql = "INSERT INTO participant (first_name,last_name,address_one,address_two,city,state,zip,phone,email,rep_id)
@@ -98,11 +101,12 @@ function addParticipant($fname,$lname,$address,$city,$state,$zip,$phone,$email,$
 
     // Execute the statement
     $success = $statement->execute();
+
     return $success;
 }
 function updateParticipant($participant_id,$address,$city,$state,$zip,$phone,$email,$rep = 1,$address2 = " "){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     //set the update sql query
     $sql = "UPDATE participant SET address_one = :address, address_two = :address2, city = :city, state = :state,
@@ -132,7 +136,7 @@ function updateParticipant($participant_id,$address,$city,$state,$zip,$phone,$em
 //function to check if participant is already added
 function containsEmergContact($participantID,$fname,$lname) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "SELECT * FROM emergency_contact WHERE participant_id = :participant_id AND first_name = :first_name 
             AND last_name = :last_name";
@@ -155,7 +159,7 @@ function containsEmergContact($participantID,$fname,$lname) {
 
 function addEmergencyContact($participant_id,$fname,$lname,$phone,$phone2 = " "){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "INSERT INTO emergency_contact (participant_id, first_name, last_name, phone, phone_two)
             VALUES (:participant_id,:fname, :lname, :phone, :phone2)";
@@ -177,7 +181,7 @@ function addEmergencyContact($participant_id,$fname,$lname,$phone,$phone2 = " ")
 }
 function updateEmergencyContact($participant_id,$fname,$lname,$phone,$phone2 = " "){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "UPDATE emergency_contact SET first_name = :fname, last_name = :lname, phone = :phone, phone_two = :phone2
             WHERE :participant_id = :participant_id";
@@ -199,7 +203,7 @@ function updateEmergencyContact($participant_id,$fname,$lname,$phone,$phone2 = "
 //function to check if participant is already added
 function containsGuardian($participantID,$fname,$lname) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "SELECT * FROM guardian WHERE participant_id = :participant_id AND first_name = :first_name 
             AND last_name = :last_name";
@@ -222,7 +226,7 @@ function containsGuardian($participantID,$fname,$lname) {
 
 function addGuardian($participant_id,$fname,$lname,$address,$city,$state,$zip,$phone,$email,$address2 = " "){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     //set the insert sql statement for participant not in the database
     $sql = "INSERT INTO guardian (participant_id, first_name, last_name, address_one, address_two, city, state,
@@ -252,7 +256,7 @@ function addGuardian($participant_id,$fname,$lname,$address,$city,$state,$zip,$p
 }
 function updateGuardian($participant_id,$fname,$lname,$address,$city,$state,$zip,$phone,$email,$address2 = " "){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     //set the update sql query
     $sql = "UPDATE guardian SET first_name = :fname, last_name = :lname, address_one = :address, 
@@ -284,7 +288,7 @@ function updateGuardian($participant_id,$fname,$lname,$address,$city,$state,$zip
 
 function addMedication($participant_id,$name,$frequency,$timeTaken){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "INSERT INTO medications (participant_id, medication_name, frequency_taken, time_taken)
             VALUES (:participant_id,:name, :frequency, :time_taken)";
@@ -309,7 +313,7 @@ function addMedication($participant_id,$name,$frequency,$timeTaken){
 //function to check if medication already is added for participant
 function containsMedication($participant_id,$medication) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "SELECT * FROM medications WHERE participant_id = :participant_id AND medication_name = :medication";
 
@@ -331,7 +335,7 @@ function containsMedication($participant_id,$medication) {
 //function to update the frequency a medication is taken
 function updateMedFrequency($participant_id,$medication,$newFrequency) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "UPDATE medications SET frequency_taken = :frequency WHERE :participant_id = :participant_id AND 
             medication_name = :medication";
@@ -354,7 +358,7 @@ function updateMedFrequency($participant_id,$medication,$newFrequency) {
 //function to update the time a medication is taken
 function updateMedTimeTaken($participant_id,$medication,$newTime) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "UPDATE medications SET time_taken = :newTime WHERE :participant_id = :participant_id AND 
             medication_name = :medication";
@@ -377,7 +381,7 @@ function updateMedTimeTaken($participant_id,$medication,$newTime) {
 //function to check if med alerts are already added
 function containsMedAlerts($participantID) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "SELECT * FROM other WHERE participant_id = :participant_id";
 
@@ -397,7 +401,7 @@ function containsMedAlerts($participantID) {
 
 function addAlertsLimitsDiet($participant_id,$alerts = "",$limits = "",$diet = ""){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "INSERT INTO other (participant_id, medical_alerts, physical_limitations, diet_restrictions)
             VALUES (:participant_id,:alerts, :limits, :diet)";
@@ -423,7 +427,7 @@ function addAlertsLimitsDiet($participant_id,$alerts = "",$limits = "",$diet = "
 //function to update medical alerts
 function updateMedAlerts($participant_id,$alerts) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "UPDATE other SET medical_alerts = :alerts WHERE :participant_id = :participant_id";
 
@@ -442,7 +446,7 @@ function updateMedAlerts($participant_id,$alerts) {
 //function to update physical limits
 function updatePhysicalLimits($participant_id,$limits) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "UPDATE other SET physical_limitations = :limits WHERE :participant_id = :participant_id";
 
@@ -461,7 +465,7 @@ function updatePhysicalLimits($participant_id,$limits) {
 //function to update physical limits
 function updateDietRestrictions($participant_id,$diet) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "UPDATE other SET diet_restrictions = :diet WHERE :participant_id = :participant_id";
 
@@ -480,7 +484,7 @@ function updateDietRestrictions($participant_id,$diet) {
 //function to check if provider is already added
 function containsProvider($participantID,$fname,$lname) {
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "SELECT * FROM provider WHERE participant_id = :participant_id AND provider_first = :first_name 
             AND provider_last = :last_name";
@@ -503,7 +507,7 @@ function containsProvider($participantID,$fname,$lname) {
 
 function addProvider($participant_id,$fname,$lname,$address,$city,$state,$zip,$phone,$email,$address2 = " "){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     //set the insert sql statement for participant not in the database
     $sql = "INSERT INTO provider (participant_id, provider_first,provider_last, address_one, address_two, city, state,
@@ -533,7 +537,7 @@ function addProvider($participant_id,$fname,$lname,$address,$city,$state,$zip,$p
 }
 function updateProvider($participant_id,$fname,$lname,$address,$city,$state,$zip,$phone,$email,$address2 = " "){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     //set the update sql query
     $sql = "UPDATE provider SET provider_first = :provider_first,provider_last = ;providier_last, 
@@ -565,7 +569,7 @@ function updateProvider($participant_id,$fname,$lname,$address,$city,$state,$zip
 
 function getParticipantID($fname,$lname){
     //database object
-    global $dbh;
+    $dbh = connect();
 
     $sql = "SELECT * FROM participant WHERE first_name = :fname AND last_name = :lname";
 
