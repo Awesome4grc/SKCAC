@@ -34,6 +34,7 @@ $('.btn-guard').on('click', function() {
 
 $('.btn-conf').on('click', function(){
     var inputs = document.getElementsByTagName("input");
+    var txtareas = (document.getElementsByTagName("textarea"));
     var valid = true;
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].required){
@@ -44,6 +45,7 @@ $('.btn-conf').on('click', function(){
             }
         }
         $.post('model/sessionBuilder.php', {value : inputs[i].value, id : inputs[i].id});
+        $.post('model/sessionBuilder.php', {value : txtareas[i].value, id: txtareas[i].id})
 
     }
     var medArray = document.getElementsByName('medArray');

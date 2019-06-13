@@ -102,13 +102,15 @@
 				<h4>Medications, Restrictions and Limitations</h4>
 				<div class="row">
 					<div class="col-4">
-						<p>Medication and Dosage: {{@SESSION.med}}</p>
+						<p>Medication and Dosage: <repeat group="{{@SESSION.medications}}" value="{{@med}}">{{@med}}</repeat></p>
 					</div>
 					<div class="col-4">
-						<p>Frequency Taken: {{@SESSION.frequency}}</p>
+						<p>Frequency Taken: <repeat group="{{@SESSION.frequencies}}" value="{{@freq}}">
+							{{@freq}}
+						</repeat></p>
 					</div>
 					<div class="col-4">
-						<p>Time Taken: {{@SESSION.time}}</p>
+						<p>Time Taken: <repeat group="{{@SESSION.times}}" value="{{@time}}}">{{@time}}</repeat></p>
 					</div>
 				</div>
 			</div>
