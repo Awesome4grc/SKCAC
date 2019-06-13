@@ -42,115 +42,7 @@ $f3->route('GET|POST /confirmation', function($f3) {
 
 
     // do something here...
-    if(!empty($_SESSION)){
 
-
-        
-
-            require ('model/db-validate.php');
-            require ('model/db-functions.php');
-
-
-
-            if(containsParticipant($_SESSION['clientFirst'],$_SESSION['clientLast'])){
-
-                updateParticipant(getParticipantID($_SESSION['clientFirst'],$_SESSION['clientLast']),
-                    $_SESSION['clientAddress'], $_SESSION['clientCity'], $_SESSION['clientState'],
-                    $_SESSION['clientZip'],$_SESSION['clientPhone'], $_SESSION['clientEmail'],1,
-                    (isset($_SESSION['clientAddress2']) ? $_SESSION['clientAddress2'] : ""));
-
-            }else{
-
-                addParticipant($_SESSION['clientFirst'],$_SESSION['clientLast'],$_SESSION['clientAddress'],
-                    $_SESSION['clientCity'], $_SESSION['clientState'],$_SESSION['clientZip'],$_SESSION['clientPhone'],
-                    $_SESSION['clientEmail'],1,
-                    (isset($_SESSION['clientAddress2']) ? $_SESSION['clientAddress2'] : ""));
-
-
-            }
-
-            $participantID = getParticipantID($_SESSION['clientFirst'],$_SESSION['clientLast']);
-
-            if(containsProvider($participantID,$_SESSION['providerFirst'],$_SESSION['providerLast'])){
-
-                updateProvider($participantID, $_SESSION['providerFirst'], $_SESSION['providerLast'],
-                    $_SESSION['providerAddress'],$_SESSION['providerCity'], $_SESSION['providerState'],
-                    $_SESSION['providerZip'], $_SESSION['providerPhone'], $_SESSION['providerEmail'],
-                    (isset($_SESSION['providerAddress2']))? $_SESSION['providerAddress2'] : "");
-            }else{
-
-                addProvider($participantID, $_SESSION['providerFirst'], $_SESSION['providerLast'],
-                    $_SESSION['providerAddress'],$_SESSION['providerCity'], $_SESSION['providerState'],
-                    $_SESSION['providerZip'], $_SESSION['providerPhone'], $_SESSION['providerEmail'],
-                    (isset($_SESSION['providerAddress2']))? $_SESSION['providerAddress2'] : "");
-            }
-
-            if(isset($_SESSION['guardianFirst'])){
-
-                if(containsGuardian($participantID,$_SESSION['guardianFirst'],$_SESSION['guardianLast'])){
-
-                    updateGuardian($participantID,$_SESSION['guardianFirst'], $_SESSION['guardianLast'],
-                        $_SESSION['guardianAddress'], $_SESSION['guardianCity'], $_SESSION['guardianState'],
-                        $_SESSION['guardianZip'], $_SESSION['guardianPhone'], $_SESSION['guardianEmail'],
-                        (isset($_SESSION['guardianAddress2']))? $_SESSION['guardianAddress2'] : "");
-
-                }else{
-
-                    addGuardian($participantID,$_SESSION['guardianFirst'], $_SESSION['guardianLast'],
-                        $_SESSION['guardianAddress'], $_SESSION['guardianCity'], $_SESSION['guardianState'],
-                        $_SESSION['guardianZip'], $_SESSION['guardianPhone'], $_SESSION['guardianEmail'],
-                        (isset($_SESSION['guardianAddress2']))? $_SESSION['guardianAddress2'] : "");
-                }
-            }else{
-
-                if(containsGuardian($participantID,$_SESSION['guardianFirst'],$_SESSION['guardianLast'])){
-
-                    updateGuardian($participantID,"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A");
-
-                }else{
-
-                    addGuardian($participantID,"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A");
-                }
-            }
-
-            if(isset($_SESSION['medications[]'])){
-
-                for($i = 0; $i < sizeof($_SESSION['medications[]']);$i++) {
-
-                    if(containsMedication($participantID,$_SESSION['medications[]'][$i])){
-
-                        updateMedFrequency($participantID,$_SESSION['medications[]'][$i],
-                            $_SESSION['frequences[]'][$i]);
-
-                        updateMedFrequency($participantID,$_SESSION['medications[]'][$i],
-                            $_SESSION['time[]'][$i]);
-                    }else{
-
-                        addMedication($participantID, $_SESSION['medications[]'][$i], $_SESSION['frequences[]'][$i],
-                            $_SESSION['time[]'][$i]);
-                    }
-                }
-            }
-
-            if(isset($_SESSION['medicalAlerts']) OR isset($_SESSION['medicalAlerts'])
-                OR isset($_SESSION['medicalAlerts'])){
-
-                if(containsMedAlerts($participantID)){
-
-                    updateMedAlerts($participantID,$_SESSION['medicalAlerts']);
-                    updatePhysicalLimits($participantID, $_SESSION['physicalLimitations']);
-                    updateDietRestrictions($participantID,$_SESSION['dietRestrictions']);
-
-                }else{
-
-                    addAlertsLimitsDiet($participantID, $_SESSION["medicalAlerts"],
-                        (isset($_SESSION['physicalLimitations']))? $_SESSION['physicalLimitations'] : "",
-                        (isset($_SESSION['dietRestrictions']))? $_SESSION['guardianAddress2'] : "");
-                }
-            }
-
-
-    }
 
     /* EMAIL NOTIFICATION in progress by Bo, do not delete */
     // 1st tab
@@ -293,10 +185,131 @@ $f3->route('GET|POST /confirmation', function($f3) {
     echo $view->render('views2/confirmation.html');
 });
 $f3->route('GET /thank_you', function() {
+
+    if(!empty($_SESSION)){
+
+        include ('model/db-validate.php');
+        include ('model/db-functions.php');
+
+
+        if (isset($_SESSION['providerAddress2'])){
+            $clientAddress2 = $_SESSION['clientAddress2'];
+        }else{
+            $clientAddress2 = "N/A";
+        }
+        if(containsParticipant($_SESSION['clientFirst'],$_SESSION['clientLast'])){
+
+            updateParticipant(getParticipantID($_SESSION['clientFirst'],$_SESSION['clientLast']),
+                $_SESSION['clientAddress'], $_SESSION['clientCity'], $_SESSION['clientState'],
+                $_SESSION['clientZip'],$_SESSION['clientPhone'], $_SESSION['clientEmail'],1,
+                $clientAddress2);
+
+        }else{
+
+            addParticipant($_SESSION['clientFirst'],$_SESSION['clientLast'],$_SESSION['clientAddress'],
+                $_SESSION['clientCity'], $_SESSION['clientState'],$_SESSION['clientZip'],$_SESSION['clientPhone'],
+                $_SESSION['clientEmail'],1, $clientAddress2);
+
+
+        }
+
+        $participantID = getParticipantID($_SESSION['clientFirst'],$_SESSION['clientLast']);
+
+        if (isset($_SESSION['providerAddress2'])){
+            $providerAddress2 = $_SESSION['providerAddress2'];
+        }else{
+            $providerAddress2 = "N/A";
+        }
+
+        addProvider($participantID, $_SESSION['providerFirst'], $_SESSION['providerLast'],
+            $_SESSION['providerAddress'],$_SESSION['providerCity'], $_SESSION['providerState'],
+            $_SESSION['providerZip'], $_SESSION['providerPhone'], $_SESSION['providerEmail'],
+            $providerAddress2);
+        //work in progress
+        /*if(containsProvider($participantID,$_SESSION['providerFirst'],$_SESSION['providerLast'])){
+
+            updateProvider($participantID, $_SESSION['providerFirst'], $_SESSION['providerLast'],
+                $_SESSION['providerAddress'],$_SESSION['providerCity'], $_SESSION['providerState'],
+                $_SESSION['providerZip'], $_SESSION['providerPhone'], $_SESSION['providerEmail'],
+                $providerAddress2);
+        }else{
+
+            addProvider($participantID, $_SESSION['providerFirst'], $_SESSION['providerLast'],
+                $_SESSION['providerAddress'],$_SESSION['providerCity'], $_SESSION['providerState'],
+                $_SESSION['providerZip'], $_SESSION['providerPhone'], $_SESSION['providerEmail'],
+                $providerAddress2);
+        }*/
+
+        if(isset($_SESSION['guardianFirst'])){
+
+            if(containsGuardian($participantID,$_SESSION['guardianFirst'],$_SESSION['guardianLast'])){
+
+                updateGuardian($participantID,$_SESSION['guardianFirst'], $_SESSION['guardianLast'],
+                    $_SESSION['guardianAddress'], $_SESSION['guardianCity'], $_SESSION['guardianState'],
+                    $_SESSION['guardianZip'], $_SESSION['guardianPhone'], $_SESSION['guardianEmail'],
+                    (isset($_SESSION['guardianAddress2']))? $_SESSION['guardianAddress2'] : "");
+
+            }else{
+
+                addGuardian($participantID,$_SESSION['guardianFirst'], $_SESSION['guardianLast'],
+                    $_SESSION['guardianAddress'], $_SESSION['guardianCity'], $_SESSION['guardianState'],
+                    $_SESSION['guardianZip'], $_SESSION['guardianPhone'], $_SESSION['guardianEmail'],
+                    (isset($_SESSION['guardianAddress2']))? $_SESSION['guardianAddress2'] : "");
+            }
+        }else{
+
+            if(containsGuardian($participantID,$_SESSION['guardianFirst'],$_SESSION['guardianLast'])){
+
+                updateGuardian($participantID,"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A");
+
+            }else{
+
+                addGuardian($participantID,"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A");
+            }
+        }
+
+        if(isset($_SESSION['medications[]'])){
+
+            for($i = 0; $i < sizeof($_SESSION['medications[]']);$i++) {
+
+                if(containsMedication($participantID,$_SESSION['medications[]'][$i])){
+
+                    updateMedFrequency($participantID,$_SESSION['medications[]'][$i],
+                        $_SESSION['frequences[]'][$i]);
+
+                    updateMedFrequency($participantID,$_SESSION['medications[]'][$i],
+                        $_SESSION['time[]'][$i]);
+                }else{
+
+                    addMedication($participantID, $_SESSION['medications[]'][$i], $_SESSION['frequences[]'][$i],
+                        $_SESSION['time[]'][$i]);
+                }
+            }
+        }
+
+        if(isset($_SESSION['medicalAlerts']) OR isset($_SESSION['medicalAlerts'])
+            OR isset($_SESSION['medicalAlerts'])){
+
+            if(containsMedAlerts($participantID)){
+
+                updateMedAlerts($participantID,$_SESSION['medicalAlerts']);
+                updatePhysicalLimits($participantID, $_SESSION['physicalLimitations']);
+                updateDietRestrictions($participantID,$_SESSION['dietRestrictions']);
+
+            }else{
+
+                addAlertsLimitsDiet($participantID, $_SESSION["medicalAlerts"],
+                    (isset($_SESSION['physicalLimitations']))? $_SESSION['physicalLimitations'] : "",
+                    (isset($_SESSION['dietRestrictions']))? $_SESSION['guardianAddress2'] : "");
+            }
+        }
+
+
+    }
     $view = new Template();
     echo $view->render('views2/thank_you.html');
     // resets session, clears everything
-    $_SESSION = array();
+    //$_SESSION = array();
 });
 //run fat free framework
 $f3->run();

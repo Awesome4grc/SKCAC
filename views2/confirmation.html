@@ -102,6 +102,7 @@
 				<h4>Medications, Restrictions and Limitations</h4>
 				<div class="row">
 					<div class="col-4">
+
 						<p>Medication and Dosage: <repeat group="{{@SESSION.medications}}" value="{{@med}}">{{@med}}</repeat></p>
 					</div>
 					<div class="col-4">
@@ -110,7 +111,20 @@
 						</repeat></p>
 					</div>
 					<div class="col-4">
-						<p>Time Taken: <repeat group="{{@SESSION.times}}" value="{{@time}}}">{{@time}}</repeat></p>
+						<p>Time Taken: <repeat group="{{@SESSION.times}}" value="{{@time}}">{{@time}}</repeat></p>
+
+						<p>Medication and Dosage:
+							<repeat group="{{@SESSION.medications}}" value="{{@med}}" >{{@med}}</repeat>
+						</p>
+					</div>
+					<div class="col-4">
+						<p>Frequency Taken: <repeat group="{{@SESSION.frequencies}}"
+								value="{{freq}}">{{@freq}}</repeat> </p>
+					</div>
+					<div class="col-4">
+						<p>Time Taken: <repeat group="{{@SESSION.times}}"
+								value="{{@time}}">{{@time}}</repeat></p>
+
 					</div>
 				</div>
 			</div>
@@ -213,11 +227,9 @@
 			<!-- Final submit button after confirming that info is correct. -->
 			<div class="flex-md-row p-3">
 				<hr>
-				<button type="button" class="btn-success btn-lg p-3" href="thank_you">
-					<a href="thank_you" alt="submit button">
-						Submit
-					</a>
-				</button>
+				<a href="thank_you" role="button" class="btn-success btn-lg p-3">
+					Submit
+				</a>
 			</div>
 		</div>
 	</body>
