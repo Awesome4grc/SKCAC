@@ -82,19 +82,32 @@ $f3->route('GET|POST /confirmation', function($f3) {
                     (isset($_SESSION['providerAddress2']))? $_SESSION['providerAddress2'] : "");
             }
 
-            if(containsGuardian($participantID,$_SESSION['guardianFirst'],$_SESSION['guardianLast'])){
+            if(isset($_SESSION['guardianFirst'])){
 
-                updateGuardian($participantID,$_SESSION['guardianFirst'], $_SESSION['guardianLast'],
-                    $_SESSION['guardianAddress'], $_SESSION['guardianCity'], $_SESSION['guardianState'],
-                    $_SESSION['guardianZip'], $_SESSION['guardianPhone'], $_SESSION['guardianEmail'],
-                    (isset($_SESSION['guardianAddress2']))? $_SESSION['guardianAddress2'] : "");
+                if(containsGuardian($participantID,$_SESSION['guardianFirst'],$_SESSION['guardianLast'])){
 
+                    updateGuardian($participantID,$_SESSION['guardianFirst'], $_SESSION['guardianLast'],
+                        $_SESSION['guardianAddress'], $_SESSION['guardianCity'], $_SESSION['guardianState'],
+                        $_SESSION['guardianZip'], $_SESSION['guardianPhone'], $_SESSION['guardianEmail'],
+                        (isset($_SESSION['guardianAddress2']))? $_SESSION['guardianAddress2'] : "");
+
+                }else{
+
+                    addGuardian($participantID,$_SESSION['guardianFirst'], $_SESSION['guardianLast'],
+                        $_SESSION['guardianAddress'], $_SESSION['guardianCity'], $_SESSION['guardianState'],
+                        $_SESSION['guardianZip'], $_SESSION['guardianPhone'], $_SESSION['guardianEmail'],
+                        (isset($_SESSION['guardianAddress2']))? $_SESSION['guardianAddress2'] : "");
+                }
             }else{
 
-                addGuardian($participantID,$_SESSION['guardianFirst'], $_SESSION['guardianLast'],
-                    $_SESSION['guardianAddress'], $_SESSION['guardianCity'], $_SESSION['guardianState'],
-                    $_SESSION['guardianZip'], $_SESSION['guardianPhone'], $_SESSION['guardianEmail'],
-                    (isset($_SESSION['guardianAddress2']))? $_SESSION['guardianAddress2'] : "");
+                if(containsGuardian($participantID,$_SESSION['guardianFirst'],$_SESSION['guardianLast'])){
+
+                    updateGuardian($participantID,"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A");
+
+                }else{
+
+                    addGuardian($participantID,"N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A");
+                }
             }
 
             if(isset($_SESSION['medications[]'])){
